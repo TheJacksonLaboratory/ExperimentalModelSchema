@@ -5,7 +5,7 @@ package org.experimental_model.schema.core;
 import "experimental_model/schema/core/base.proto";
 
 option java_multiple_files = true;
-option java_package = "org.phenopackets.schema.v2.core";
+option java_package = "org.jax.experimental_model.schema.core";
 
 // An individual phenotypic feature, observed as either present or absent (negated), with possible onset, modifiers and
 // frequency
