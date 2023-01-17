@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package org.jax.experimental_model_schema;
+
+option java_multiple_files = true;
+option java_package = "org.jax.experimental_model.schema";
+
+import "experimental_model/schema/core/phenotypic_feature.proto";
+
+// A description of genetic, genomic, experimental, and phenotypic information about an experiment with a model organism.
+//
+// This is a bundle of high-level concepts with no specifically defined relational concepts. It is expected that the
+// resources sharing the experimental_models will define and enforce their own semantics and level of requirements for included
+// fields.
+message ExperimentalModel {
+    // An identifier specific for this experimental model.
+    string id = 1;
+
+
+    // Phenotypic features relating to the subject of the phenopacket
+    repeated core.PhenotypicFeature phenotypic_features = 3;
+
+    // Quantifiable measurements related to the individual
+    repeated core.Measurement measurements = 4;
+
+
+
+    }
