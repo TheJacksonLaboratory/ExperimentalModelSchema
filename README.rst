@@ -7,6 +7,23 @@ TODO -- update the readme and the links
 Documentation
 =============
 
+TODO - before we go public, the documentation can be generated locally.
+Enter the following to get set up
+```
+cd docs
+python3 -m venv venv
+source venv/bin/activate
+pip install sphinx sphinx_rtd_theme
+```
+Enter the following (in the docs folder) to create the latest version of the documentation
+```
+make html
+```
+Open the documentation in your browser by navigating to  
+ExperimentalModelSchema/docs/build/index.html (at the appropriate path).
+
+
+
 The core documentation can be found at `Documentation`_
 
 The documentation in this README is primarily for the users of the experimental-model-schema java library.
