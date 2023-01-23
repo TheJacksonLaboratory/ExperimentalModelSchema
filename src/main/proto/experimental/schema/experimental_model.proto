@@ -1,11 +1,16 @@
 syntax = "proto3";
 
-package org.jax.experimental_model_schema;
+package org.jax.experimental.schema;
+//import "experimental/schema/core/phenotypic_feature.proto";
+import "phenopackets/schema/v2/core/base.proto";
+import "phenopackets/schema/v2/core/phenotypic_feature.proto";
+//import "phenopackets/schema/v2/core/base.proto";
 
 option java_multiple_files = true;
-option java_package = "org.jax.experimental_model.schema";
+option java_package = "org.jax.experimental.schema";
 
-import "experimental_model/schema/core/phenotypic_feature.proto";
+
+
 
 // A description of genetic, genomic, experimental, and phenotypic information about an experiment with a model organism.
 //
@@ -18,10 +23,10 @@ message ExperimentalModel {
 
 
     // Phenotypic features relating to the subject of the phenopacket
-    repeated core.PhenotypicFeature phenotypic_features = 3;
+    repeated phenopackets.schema.v2.core.PhenotypicFeature phenotypic_features = 3;
 
     // Quantifiable measurements related to the individual
-    repeated core.Measurement measurements = 4;
+   // repeated core.Measurement measurements = 4;
 
 
 

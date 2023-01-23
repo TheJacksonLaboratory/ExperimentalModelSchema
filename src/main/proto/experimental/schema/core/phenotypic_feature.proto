@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package org.experimental_model.schema.core;
+package org.jax.experimental.schema.core;
 
-import "experimental_model/schema/core/base.proto";
+import "experimental/schema/core/base.proto";
 
 option java_multiple_files = true;
-option java_package = "org.jax.experimental_model.schema.core";
+option java_package = "org.jax.experimental.schema.core";
 
 // An individual phenotypic feature, observed as either present or absent (negated), with possible onset, modifiers and
 // frequency
