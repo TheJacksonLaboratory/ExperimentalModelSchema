@@ -16,8 +16,7 @@ is available from the `experimental-model-schema GitHub repository <https://gith
 
    introduction
    emschema
-   #toplevel
-   #building-blocks
+   building-blocks
    #recommended-ontologies
    #working
    #examples
