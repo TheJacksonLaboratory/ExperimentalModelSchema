@@ -24,5 +24,5 @@ Global Alliance for Genomics and Health (GA4GH)
 
    #Phenopacket basics <basics>
    #requirements
-   #ontologies
+   ontologies
    protobuf
