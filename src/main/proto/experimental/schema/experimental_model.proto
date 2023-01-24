@@ -4,7 +4,8 @@ package org.jax.experimental.schema;
 //import "experimental/schema/core/phenotypic_feature.proto";
 import "phenopackets/schema/v2/core/base.proto";
 import "phenopackets/schema/v2/core/phenotypic_feature.proto";
-//import "phenopackets/schema/v2/core/base.proto";
+import "phenopackets/schema/v2/core/measurement.proto";
+
 
 option java_multiple_files = true;
 option java_package = "org.jax.experimental.schema";
@@ -21,12 +22,13 @@ message ExperimentalModel {
     // An identifier specific for this experimental model.
     string id = 1;
 
-
     // Phenotypic features relating to the subject of the phenopacket
     repeated phenopackets.schema.v2.core.PhenotypicFeature phenotypic_features = 3;
 
     // Quantifiable measurements related to the individual
-   // repeated core.Measurement measurements = 4;
+    repeated phenopackets.schema.v2.core.Measurement measurements = 4;
+
+
 
 
 
