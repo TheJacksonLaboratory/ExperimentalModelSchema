@@ -19,6 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MetaData" href="metadata.html" />
     <link rel="prev" title="Experimental Cohort" href="experimental_cohort.html" /> 
 </head>
 
@@ -57,12 +58,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#suggestion">Suggestion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#data-model">Data model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#explanations">Explanations</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id">id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#explanations">Explanations</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html">MetaData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ontologyclass.html">OntologyClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strain.html">Strain</a></li>
 </ul>
 </li>
 </ul>
@@ -98,6 +100,7 @@
 This element intends to represent an individual model organism used in an experiment.
 Note that some experiment packets will refer to a cohort of individual models used
 for an experiment instead of an individual (See <a class="reference internal" href="experimental_cohort.html#rstexperimentalcohort"><span class="std std-ref">Experimental Cohort</span></a>).</p>
+<p>Probably we want to model this on the ro-crate JSON-LD model, therefore I am not trying to fill out details here</p>
 <section id="suggestion">
 <h2>Suggestion<a class="headerlink" href="#suggestion" title="Permalink to this heading"></a></h2>
 <p>The data that is current in MPD looks like this</p>
@@ -144,7 +147,7 @@ for an experiment instead of an individual (See <a class="reference internal" hr
 <p>It seems to me that this is mixing information about the experiment itself with information about the measurement
 and other items. We would want to “normalize” this in database parlance. It seems to me it would be a good idea
 to create an ontology to represent information about the types of experiments we perform at JAX under the assumption
-that these experimental desgns are stable with time.</p>
+that these experimental designs are stable with time.</p>
 <p>We have here an <strong>Open Field Test</strong>: The Open Field task is a simple sensorimotor test used to determine general activity
 levels, gross locomotor activity, and exploration habits in rodent models.</p>
 <p>We could represent this as follows</p>
@@ -166,7 +169,8 @@ other fields) in the EMS.</p>
 <section id="data-model">
 <h2>Data model<a class="headerlink" href="#data-model" title="Permalink to this heading"></a></h2>
 <blockquote>
-<div><table class="docutils align-default">
+<div><table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Definition of the <code class="docutils literal notranslate"><span class="pre">ExperimentalMeasurement</span></code> element</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 17%" />
 <col style="width: 17%" />
@@ -184,47 +188,17 @@ other fields) in the EMS.</p>
 <tr class="row-even"><td><p>id</p></td>
 <td><p>string</p></td>
 <td><p>1..1</p></td>
-<td><p>An arbitrary identifier. REQUIRED.</p></td>
+<td><p>An arbitrary identifier for this specific measurement. REQUIRED</p></td>
 </tr>
-<tr class="row-odd"><td><p>alternate_ids</p></td>
-<td><p>a list of <span class="xref std std-ref">rstcurie</span></p></td>
-<td><p>0..*</p></td>
-<td><p>A list of alternative identifiers for the individual</p></td>
+<tr class="row-odd"><td><p>experiment</p></td>
+<td><p><a class="reference internal" href="ontologyclass.html#rstontologyclass"><span class="std std-ref">OntologyClass</span></a></p></td>
+<td><p>1..1</p></td>
+<td><p>The experiment performed to obtain the measurement</p></td>
 </tr>
-<tr class="row-even"><td><p>date_of_birth</p></td>
-<td><p>timestamp</p></td>
+<tr class="row-even"><td><p>age</p></td>
+<td><p>AgeElement</p></td>
 <td><p>0..1</p></td>
-<td><p>A timestamp either exact or imprecise</p></td>
-</tr>
-<tr class="row-odd"><td><p>time_at_last_encounter</p></td>
-<td><p><span class="xref std std-ref">rsttimeelement</span></p></td>
-<td><p>0..1</p></td>
-<td><p>The age or age range of the individual when last encountered. RECOMMENDED.</p></td>
-</tr>
-<tr class="row-even"><td><p>vital_status</p></td>
-<td><p><span class="xref std std-ref">rstvitalstatus</span></p></td>
-<td><p>0..1</p></td>
-<td><p>The vital status of the individual e.g. whether they are alive or the time and cause of death. RECOMMENDED.</p></td>
-</tr>
-<tr class="row-odd"><td><p>sex</p></td>
-<td><p><span class="xref std std-ref">rstsex</span></p></td>
-<td><p>0..1</p></td>
-<td><p>Observed apparent sex of the individual</p></td>
-</tr>
-<tr class="row-even"><td><p>karyotypic_sex</p></td>
-<td><p><span class="xref std std-ref">rstkaryotypicsex</span></p></td>
-<td><p>0..1</p></td>
-<td><p>The karyotypic sex of the individual</p></td>
-</tr>
-<tr class="row-odd"><td><p>gender</p></td>
-<td><p><span class="xref std std-ref">rstkaryotypicsex</span></p></td>
-<td><p>0..1</p></td>
-<td><p>Self-identified gender</p></td>
-</tr>
-<tr class="row-even"><td><p>taxonomy</p></td>
-<td><p><span class="xref std std-ref">rstontologyclass</span></p></td>
-<td><p>0..1</p></td>
-<td><p>an <span class="xref std std-ref">rstontologyclass</span> representing the species (e.g., NCBITaxon:9615)</p></td>
+<td><p>The age at which the experiment was performend. RECOMMENDED</p></td>
 </tr>
 </tbody>
 </table>
@@ -233,24 +207,13 @@ other fields) in the EMS.</p>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
 <p>The following example is typical but does not make use of all of the optional fields of this element.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">individual</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;patient:0&quot;</span>
-<span class="w">  </span><span class="nt">dateOfBirth</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1998-01-01T00:00:00Z&quot;</span>
-<span class="w">  </span><span class="nt">sex</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MALE&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">todo</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;todo&quot;</span>
 </pre></div>
 </div>
 </section>
 <section id="explanations">
 <h2>Explanations<a class="headerlink" href="#explanations" title="Permalink to this heading"></a></h2>
-<section id="id">
-<h3>id<a class="headerlink" href="#id" title="Permalink to this heading"></a></h3>
-<p>This element is the <strong>primary</strong> identifier for the individual and SHOULD be used in other parts of a message when
-referring to this individual - for example in a <span class="xref std std-ref">rstpedigree</span> or <span class="xref std std-ref">rstbiosample</span>. The contents of the element
-are context dependent, and will be determined by the application. For instance, if the Phenopacket is being used to
-represent a case study about an individual with some genetic disease, the individual may be referred to in that study by
-their position in the pedigree, e.g., III:2 for the second person in the third generation. In this case, id would be set
-to <code class="docutils literal notranslate"><span class="pre">III:2</span></code>.</p>
-</section>
 </section>
 </section>
 
@@ -259,6 +222,7 @@ to <code class="docutils literal notranslate"><span class="pre">III:2</span></co
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="experimental_cohort.html" class="btn btn-neutral float-left" title="Experimental Cohort" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="metadata.html" class="btn btn-neutral float-right" title="MetaData" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

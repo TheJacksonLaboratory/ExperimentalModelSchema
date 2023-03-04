@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MetaData &mdash; experimental-model-schema 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="OntologyClass" href="ontologyclass.html" />
+    <link rel="prev" title="Experimental Measaurement" href="experimental_measurement.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            experimental-model-schema
+              <img src="_static/jax-logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to the Experimental Model Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emschema.html">Experimental Model Schema</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="building-blocks.html">EMS building blocks</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="age.html">Age</a></li>
+<li class="toctree-l2"><a class="reference internal" href="age.html#agerange">AgeRange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="age.html#gestationalage">GestationalAge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animal.html">Animal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="individual.html">Individual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental_cohort.html">Experimental Cohort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental_measurement.html">Experimental Measaurement</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MetaData</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-model">Data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#explanations">Explanations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#created">created</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#created-by">created_by</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submitted-by">submitted_by</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resources">resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#updates">updates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#phenopacket-schema-version">phenopacket_schema_version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#external-references">external_references</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ontologyclass.html">OntologyClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strain.html">Strain</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">experimental-model-schema</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="building-blocks.html">EMS building blocks</a></li>
+      <li class="breadcrumb-item active">MetaData</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/metadata.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="metadata">
+<span id="rstmetadata"></span><h1>MetaData<a class="headerlink" href="#metadata" title="Permalink to this heading"></a></h1>
+<p>This element contains structured definitions of the resources and ontologies used within the phenopacket. It is considered to be a required element of a valid Phenopacket and application Q/C software should check this.</p>
+<section id="data-model">
+<h2>Data model<a class="headerlink" href="#data-model" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Definition of the <code class="docutils literal notranslate"><span class="pre">MetaData</span></code> element</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Multiplicity</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>created</p></td>
+<td><p>A Timestamp</p></td>
+<td><p>1..1</p></td>
+<td><p>Representation of the time when this object was created, e.g., 2019-04-01T15:10:17.808Z</p></td>
+</tr>
+<tr class="row-odd"><td><p>created_by</p></td>
+<td><p>string</p></td>
+<td><p>1..1</p></td>
+<td><p>Name of person who created the phenopacket</p></td>
+</tr>
+<tr class="row-even"><td><p>submitted_by</p></td>
+<td><p>string</p></td>
+<td><p>0..1</p></td>
+<td><p>Name of person who submitted the phenopacket</p></td>
+</tr>
+<tr class="row-odd"><td><p>resources</p></td>
+<td><p>list of <span class="xref std std-ref">rstresource</span></p></td>
+<td><p>1..*</p></td>
+<td><p>Ontologies used to create the phenopacket</p></td>
+</tr>
+<tr class="row-even"><td><p>updates</p></td>
+<td><p>list of <span class="xref std std-ref">rstupdate</span></p></td>
+<td><p>0..*</p></td>
+<td><p>List of updates to the phenopacket</p></td>
+</tr>
+<tr class="row-odd"><td><p>phenopacket_schema_version</p></td>
+<td><p>string</p></td>
+<td><p>1..1</p></td>
+<td><p>schema version of the current phenopacket</p></td>
+</tr>
+<tr class="row-even"><td><p>external_references</p></td>
+<td><p>List of <span class="xref std std-ref">rstexternalreference</span></p></td>
+<td><p>0..*</p></td>
+<td><p>(See text)</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The <cite>MetaData</cite> element MUST have one <span class="xref std std-ref">rstresource</span> element for each ontology or terminology whose
+terms are used in the Phenopacket. For instance, if a MONDO term is used to specify the disease and
+HPO terms are used to specify the phenotypes of a patient, then the <cite>MetaData</cite> element MUST have
+one <cite>Resource</cite> element each for MONDO and HPO.</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">created</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2019-07-21T00:25:54.662Z&quot;</span>
+<span class="w">  </span><span class="nt">createdBy</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Peter</span><span class="nv"> </span><span class="s">R.&quot;</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;hp&quot;</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;human</span><span class="nv"> </span><span class="s">phenotype</span><span class="nv"> </span><span class="s">ontology&quot;</span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://purl.obolibrary.org/obo/hp.owl&quot;</span>
+<span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2018-03-08&quot;</span>
+<span class="w">      </span><span class="nt">namespacePrefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;HP&quot;</span>
+<span class="w">      </span><span class="nt">iriPrefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;hp&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;geno&quot;</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Genotype</span><span class="nv"> </span><span class="s">Ontology&quot;</span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://purl.obolibrary.org/obo/geno.owl&quot;</span>
+<span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;19-03-2018&quot;</span>
+<span class="w">      </span><span class="nt">namespacePrefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;GENO&quot;</span>
+<span class="w">      </span><span class="nt">iriPrefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;geno&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;pubmed&quot;</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PubMed&quot;</span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://www.ncbi.nlm.nih.gov/pubmed/&quot;</span>
+<span class="w">      </span><span class="nt">namespacePrefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PMID&quot;</span>
+<span class="w">  </span><span class="nt">phenopacketSchemaVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2.0&quot;</span>
+<span class="w">  </span><span class="nt">externalReferences</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PMID:30808312&quot;</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Bao</span><span class="nv"> </span><span class="s">M,</span><span class="nv"> </span><span class="s">et</span><span class="nv"> </span><span class="s">al.</span><span class="nv"> </span><span class="s">COL6A1</span><span class="nv"> </span><span class="s">mutation</span><span class="nv"> </span><span class="s">leading</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">Bethlem</span><span class="nv"> </span><span class="s">myopathy</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">recurrent</span><span class="nv"> </span><span class="s">hematuria:</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">case</span><span class="nv"> </span><span class="s">report.</span><span class="nv"> </span><span class="s">BMC</span><span class="nv"> </span><span class="s">Neurol.</span><span class="nv"> </span><span class="s">2019;19(1):32.&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="explanations">
+<h2>Explanations<a class="headerlink" href="#explanations" title="Permalink to this heading"></a></h2>
+<section id="created">
+<h3>created<a class="headerlink" href="#created" title="Permalink to this heading"></a></h3>
+<p>This element is a <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601 UTC timestamp</a> for when this phenopacket was
+created in ISO, e.g.,  “2018-03-01T00:00:00Z”.</p>
+</section>
+<section id="created-by">
+<h3>created_by<a class="headerlink" href="#created-by" title="Permalink to this heading"></a></h3>
+<p>This is a string that represents an identifier for the contributor/ program. The expected syntax and semantics are application-dependent.</p>
+</section>
+<section id="submitted-by">
+<h3>submitted_by<a class="headerlink" href="#submitted-by" title="Permalink to this heading"></a></h3>
+<p>This is a string that represents an identifier for the person who submitted the phenopacket (who may not be
+the person who created the phenopacket).</p>
+</section>
+<section id="resources">
+<h3>resources<a class="headerlink" href="#resources" title="Permalink to this heading"></a></h3>
+<p>This element contains a listing of the ontologies/resources referenced in the phenopacket.</p>
+</section>
+<section id="updates">
+<h3>updates<a class="headerlink" href="#updates" title="Permalink to this heading"></a></h3>
+<p>This element contains a list of <span class="xref std std-ref">rstupdate</span> objects which contain information about when, what and who updated
+a phenopacket. This is only necessary when a phenopacket is being used as a persistent record and is being continuously
+updated. Resources should provide information about how this is being used.</p>
+</section>
+<section id="phenopacket-schema-version">
+<h3>phenopacket_schema_version<a class="headerlink" href="#phenopacket-schema-version" title="Permalink to this heading"></a></h3>
+<p>A string representing the version of the phenopacket-schema according to which a phenopacket was made. Permitted values
+MUST be one of <cite>1.0.0</cite>, <cite>1.0</cite> or <cite>2.0</cite>. Versions <cite>1.0.0</cite> and <cite>1.0</cite> are equivalent and the <cite>1.0</cite> string should be
+preferred. This version of the schema is <cite>2.0</cite>.</p>
+</section>
+<section id="external-references">
+<h3>external_references<a class="headerlink" href="#external-references" title="Permalink to this heading"></a></h3>
+<p>A list of <span class="xref std std-ref">rstexternalreference</span> (such as the PubMed id of a publication from which a
+phenopacket was derived).</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="experimental_measurement.html" class="btn btn-neutral float-left" title="Experimental Measaurement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ontologyclass.html" class="btn btn-neutral float-right" title="OntologyClass" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright The Jackson Laboratory.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

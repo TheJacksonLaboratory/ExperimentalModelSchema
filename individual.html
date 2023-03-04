@@ -70,6 +70,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="experimental_cohort.html">Experimental Cohort</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental_measurement.html">Experimental Measaurement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html">MetaData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ontologyclass.html">OntologyClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strain.html">Strain</a></li>
 </ul>
 </li>
 </ul>
@@ -164,9 +168,9 @@ for an experiment instead of an individual (See <a class="reference internal" hr
 <td><p>Self-identified gender</p></td>
 </tr>
 <tr class="row-even"><td><p>taxonomy</p></td>
-<td><p><span class="xref std std-ref">rstontologyclass</span></p></td>
+<td><p><a class="reference internal" href="ontologyclass.html#rstontologyclass"><span class="std std-ref">OntologyClass</span></a></p></td>
 <td><p>0..1</p></td>
-<td><p>an <span class="xref std std-ref">rstontologyclass</span> representing the species (e.g., NCBITaxon:9615)</p></td>
+<td><p>an <a class="reference internal" href="ontologyclass.html#rstontologyclass"><span class="std std-ref">OntologyClass</span></a> representing the species (e.g., NCBITaxon:9615)</p></td>
 </tr>
 </tbody>
 </table>
@@ -235,7 +239,7 @@ for ease of use and to limit incorrect mapping.</p>
 <section id="alternate-ids">
 <h3>alternate_ids<a class="headerlink" href="#alternate-ids" title="Permalink to this heading"></a></h3>
 <p>An optional list of alternative identifiers for this individual. These should be in the form of <span class="xref std std-ref">rstcurie`s and hence have a
-corresponding :ref:`rstresource</span> listed in the <span class="xref std std-ref">rstmetadata</span>. These should <strong>not</strong> be used elsewhere in the phenopacket
+corresponding :ref:`rstresource</span> listed in the <a class="reference internal" href="metadata.html#rstmetadata"><span class="std std-ref">MetaData</span></a>. These should <strong>not</strong> be used elsewhere in the phenopacket
 as this will break the assumptions required for using the <code class="docutils literal notranslate"><span class="pre">id</span></code> field as the primary identifier. This field is provided
 for the convenience of users who may have multiple mappings to an individual which they need to track.</p>
 </section>

@@ -9,6 +9,8 @@ This element intends to represent an individual model organism used in an experi
 Note that some experiment packets will refer to a cohort of individual models used
 for an experiment instead of an individual (See :ref:`rstexperimentalcohort`).
 
+Probably we want to model this on the ro-crate JSON-LD model, therefore I am not trying to fill out details here
+
 
 Suggestion
 ##########
@@ -59,7 +61,7 @@ The data that is current in MPD looks like this
 It seems to me that this is mixing information about the experiment itself with information about the measurement
 and other items. We would want to "normalize" this in database parlance. It seems to me it would be a good idea
 to create an ontology to represent information about the types of experiments we perform at JAX under the assumption
-that these experimental desgns are stable with time.
+that these experimental designs are stable with time.
 
 We have here an **Open Field Test**: The Open Field task is a simple sensorimotor test used to determine general activity
 levels, gross locomotor activity, and exploration habits in rodent models.
@@ -85,7 +87,7 @@ other fields) in the EMS.
 Data model
 ##########
 
- .. list-table::
+ .. list-table:: Definition of the ``ExperimentalMeasurement`` element
     :widths: 25 25 25 75
     :header-rows: 1
 
@@ -96,39 +98,15 @@ Data model
     * - id
       - string
       - 1..1
-      - An arbitrary identifier. REQUIRED.
-    * - alternate_ids
-      - a list of :ref:`rstcurie`
-      - 0..*
-      - A list of alternative identifiers for the individual
-    * - date_of_birth
-      - timestamp
-      - 0..1
-      - A timestamp either exact or imprecise
-    * - time_at_last_encounter
-      - :ref:`rsttimeelement`
-      - 0..1
-      - The age or age range of the individual when last encountered. RECOMMENDED.
-    * - vital_status
-      - :ref:`rstvitalstatus`
-      - 0..1
-      - The vital status of the individual e.g. whether they are alive or the time and cause of death. RECOMMENDED.
-    * - sex
-      - :ref:`rstsex`
-      - 0..1
-      - Observed apparent sex of the individual
-    * - karyotypic_sex
-      - :ref:`rstkaryotypicsex`
-      - 0..1
-      - The karyotypic sex of the individual
-    * - gender
-      - :ref:`rstkaryotypicsex`
-      - 0..1
-      -  Self-identified gender
-    * - taxonomy
+      - An arbitrary identifier for this specific measurement. REQUIRED
+    * - experiment
       - :ref:`rstontologyclass`
+      - 1..1
+      - The experiment performed to obtain the measurement
+    * - age
+      - AgeElement
       - 0..1
-      - an :ref:`rstontologyclass` representing the species (e.g., NCBITaxon:9615)
+      - The age at which the experiment was performend. RECOMMENDED
 
 
 Example
@@ -138,19 +116,10 @@ The following example is typical but does not make use of all of the optional fi
 
 .. code-block:: yaml
 
-  individual:
-    id: "patient:0"
-    dateOfBirth: "1998-01-01T00:00:00Z"
-    sex: "MALE"
+  todo:
+    id: "todo"
+
 
 Explanations
 ############
 
-id
-~~
-This element is the **primary** identifier for the individual and SHOULD be used in other parts of a message when
-referring to this individual - for example in a :ref:`rstpedigree` or :ref:`rstbiosample`. The contents of the element
-are context dependent, and will be determined by the application. For instance, if the Phenopacket is being used to
-represent a case study about an individual with some genetic disease, the individual may be referred to in that study by
-their position in the pedigree, e.g., III:2 for the second person in the third generation. In this case, id would be set
-to ``III:2``.

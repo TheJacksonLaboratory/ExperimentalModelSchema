@@ -21,3 +21,7 @@ building blocks.
    individual
    experimental_cohort
    experimental_measurement
+   metadata
+   ontologyclass
+   project
+   strain

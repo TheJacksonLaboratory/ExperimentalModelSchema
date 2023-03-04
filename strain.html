@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Experimental Cohort &mdash; experimental-model-schema 0.0.1 documentation</title>
+  <title>Strain &mdash; experimental-model-schema 0.0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -19,8 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Experimental Measaurement" href="experimental_measurement.html" />
-    <link rel="prev" title="Individual" href="individual.html" /> 
+    <link rel="prev" title="Project" href="project.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,19 +52,12 @@
 <li class="toctree-l2"><a class="reference internal" href="age.html#gestationalage">GestationalAge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="animal.html">Animal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="individual.html">Individual</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Experimental Cohort</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#explanations">Explanations</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id">id</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#to-do">TO-DO</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="experimental_cohort.html">Experimental Cohort</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental_measurement.html">Experimental Measaurement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metadata.html">MetaData</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ontologyclass.html">OntologyClass</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project.html">Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strain.html">Strain</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Strain</a></li>
 </ul>
 </li>
 </ul>
@@ -85,9 +77,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="building-blocks.html">EMS building blocks</a></li>
-      <li class="breadcrumb-item active">Experimental Cohort</li>
+      <li class="breadcrumb-item active">Strain</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/experimental_cohort.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/strain.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -95,30 +87,61 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="experimental-cohort">
-<span id="rstexperimentalcohort"></span><h1>Experimental Cohort<a class="headerlink" href="#experimental-cohort" title="Permalink to this heading"></a></h1>
-<p>This element should be used if we have data about a cohort of individuals but do
-not have data on each individual model.</p>
-<section id="explanations">
-<h2>Explanations<a class="headerlink" href="#explanations" title="Permalink to this heading"></a></h2>
-<section id="id">
-<h3>id<a class="headerlink" href="#id" title="Permalink to this heading"></a></h3>
-<p>A unique identified for the cohort, which MUST be used when refering to the
-cohort in other sections of the experiment packet.</p>
-</section>
-</section>
-<section id="to-do">
-<h2>TO-DO<a class="headerlink" href="#to-do" title="Permalink to this heading"></a></h2>
-<p>Discuss other elements that might be required here</p>
-</section>
+  <section id="strain">
+<span id="rststrain"></span><h1>Strain<a class="headerlink" href="#strain" title="Permalink to this heading"></a></h1>
+<p>We currently have the following MPD schema for information about a strain. The table is mixing information about the
+strain itself with information about its availability at JAX, which seems like it should live somewhere else? The
+strain nomenclature and related concepts are available in this
+<a class="reference external" href="https://www.urmc.rochester.edu/MediaLibraries/URMCMedia/animal-resource/forms/documents/JAX-Handbook-Genetically-Standardized-Mice.pdf">handbook</a>,
+but this information is not currently easily available at the JAX webpage.</p>
+<p><strong>TODO</strong> decide what level of detail we want to model this with and how.
+Probably some sort of a strain ontology would be good so that all of the information about a strain lives externally
+to the experimental packets and we can just use an ontology term to refer to them.</p>
+<p><strong>TODO</strong> Are there data required to denote the particular version of a strain used for some experiment?</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<dl>
+<dt>{</dt><dd><dl>
+<dt>“jaxinfo”: [</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“avl_status”: “Repository Live”,
+“nomenclature”: “CC002/UncJ”,
+“stocknum”: “021236”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>],
+“mpdinfo”: [</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“aname”: “CC002/UncJ”,
+“id”: 1502,
+“jaxavl”: “Repository Live”,
+“longname”: “CC002/UncJ”,
+“mginum”: “MGI:5649080”,
+“nproj”: 9,
+“nsnpproj”: null,
+“panelsym”: “CC”,
+“stocknum”: “021236”,
+“straintype”: “RI”,
+“vendor”: “J”</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+<p>}</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="individual.html" class="btn btn-neutral float-left" title="Individual" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="experimental_measurement.html" class="btn btn-neutral float-right" title="Experimental Measaurement" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="project.html" class="btn btn-neutral float-left" title="Project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
