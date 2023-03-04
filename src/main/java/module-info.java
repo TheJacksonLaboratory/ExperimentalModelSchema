@@ -1,6 +1,6 @@
 @SuppressWarnings({ "requires-automatic", "requires-transitive-automatic" })
-module org.experimental_model.schema {
+module org.experimental.schema {
     requires transitive com.google.protobuf;
-   // exports org.jax.experimental.schema;
-   // exports org.jax.experimental.schema.core;
+   exports org.experimental.schema;
+   exports org.experimental.schema.core;
 }
