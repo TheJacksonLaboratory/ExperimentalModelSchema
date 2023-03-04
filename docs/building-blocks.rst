@@ -16,5 +16,6 @@ building blocks.
 .. toctree::
    :maxdepth: 1
 
+   animal
    individual
    experimental_cohort

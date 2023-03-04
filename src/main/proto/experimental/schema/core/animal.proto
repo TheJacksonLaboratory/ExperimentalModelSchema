@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package org.jax.experimental.schema.core;
+
+import "google/protobuf/timestamp.proto";
+import "experimental/schema/core/base.proto";
+
+option java_multiple_files = true;
+option java_package = "org.jax.experimental.schema.core";
+
+// An individual (or subject) typically corresponds to an individual human or another organism.
+// FHIR mapping: Patient (https://www.hl7.org/fhir/patient.html).
+message Animal {
+  // an application-specific identifier such as "F148-1-dob2015-01-09"
+  string animal_id = 1;
+  // an application-specific identifier of the experimental project
+  string animal_project_id = 2;
+  // a synbol/acronym representing the project
+  string project_symbol = 3;
+
+  Sex sex = 4;
+  // WHAT IS THIS FOR AND DOES IT BELONG IN THE SCHEMA?
+  int32 stock_number = 5;
+  OntologyClass taxonomy = 6;
+  // A String representing the strain, e.g., "CC002/UncJ"
+  string strain = 7;
+  // SHOULD THIS BE AN INT INSTEAD
+  string strain_identifier = 8;
+}
+
+
+// Sex of an individual
+enum Sex {
+  // Not assessed / available.
+  UNKNOWN_SEX = 0;
+  // Female
+  FEMALE = 1;
+  // Male
+  MALE = 2;
+  // It is not possible, to accurately assess the applicability of MALE/FEMALE.
+  OTHER_SEX = 3;
+}
+
