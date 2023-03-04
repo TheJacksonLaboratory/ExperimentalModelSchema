@@ -23,6 +23,7 @@ building blocks.
    experimental_cohort
    experimental_measurement
    metadata
+   model_genotype
    ontologyclass
    project
    protocol
