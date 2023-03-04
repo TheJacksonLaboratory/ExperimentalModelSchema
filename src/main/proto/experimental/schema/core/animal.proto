@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package org.jax.experimental.schema.core;
+package org.experimental.schema.core;
 
-import "base.proto";
+import "experimental/schema/core/base.proto";
 
 option java_multiple_files = true;
 option java_package = "org.experimental.schema.core";
@@ -27,16 +27,4 @@ message Animal {
   string strain_identifier = 8;
 }
 
-
-// Sex of an individual
-enum Sex {
-  // Not assessed / available.
-  UNKNOWN_SEX = 0;
-  // Female
-  FEMALE = 1;
-  // Male
-  MALE = 2;
-  // It is not possible, to accurately assess the applicability of MALE/FEMALE.
-  OTHER_SEX = 3;
-}
 

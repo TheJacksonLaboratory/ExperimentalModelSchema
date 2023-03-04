@@ -100,3 +100,16 @@ message File {
   // genomic data files there MUST be a 'genomeAssembly' key.
   map<string, string> file_attributes = 3;
 }
+
+
+// Sex of an individual
+enum Sex {
+  // Not assessed / available.
+  UNKNOWN_SEX = 0;
+  // Female
+  FEMALE = 1;
+  // Male
+  MALE = 2;
+  // It is not possible, to accurately assess the applicability of MALE/FEMALE.
+  OTHER_SEX = 3;
+}

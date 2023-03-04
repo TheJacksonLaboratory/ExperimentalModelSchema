@@ -75,6 +75,25 @@ TODO -- Any other introduction needed here?
     strain: "CC002/UncJ",
     strain_identifier: 1502
 
+Alternatively in JSON,
+
+.. code-block:: json
+
+    {
+      "animalId": "F148-1-dob2015-01-09",
+      "animalProjectId": "519",
+      "projectSymbol": "JaxCC1",
+      "sex": "MALE",
+      "stockNumber": 42,
+      "taxonomy": {
+        "id": "NCBITaxon:10090",
+        "label": "Mus musculus"
+      },
+      "strain": "CC002/UncJ",
+      "strainIdentifier": "1502"
+    }
+
+
 
 Explanations
 ############
