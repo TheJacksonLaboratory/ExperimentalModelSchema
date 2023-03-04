@@ -44,5 +44,48 @@ Data model
       - Ontology versions used to create the ES
 
 
+The following is the data available in MPD for a project:
 
+.. code-block:: console
 
+    {
+      "count": 1,
+      "projects": [
+        {
+          "ages": "various",
+          "availstat": "public",
+          "changesincereleased": null,
+          "corrpi": null,
+          "createdtime": null,
+          "deletedtime": null,
+          "external_id": null,
+          "instauth": "instauth",
+          "largecollab": null,
+          "mpdsector": "pheno",
+          "ncohorts": null,
+          "nstrains": 18,
+          "paneldesc": "CC",
+          "panelsym": "CC",
+          "participants": null,
+          "pistring": "The Jackson Laboratory",
+          "popcount_f": null,
+          "popcount_m": null,
+          "pophints": null,
+          "projid": 519,
+          "projsym": "JaxCC1",
+          "projyear": "2018",
+          "releasedate": "2019/04",
+          "releasedtime": null,
+          "rnaseq_id": null,
+          "seriesstub": null,
+          "seriestag": null,
+          "sexes": "both",
+          "species": null,
+          "status": null,
+          "tags": "",
+          "title": "Multisystem phenotyping of 18 Collaborative Cross strains",
+          "updatedtime": null,
+          "url": null
+        }
+      ]
+    }

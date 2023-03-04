@@ -84,6 +84,10 @@ We could represent this as follows
 Then, we would refer to this term instead of the  descrip, descrip2, extname, measnum, and method fields (and possibly some of the
 other fields) in the EMS.
 
+In bioconnect, I am seeing things like this -- JAXAS000001
+longitudinal mass measurement assay, but it is unclear where to get info about *JAXAS000001* -- is this intended to
+be a controlled terminology or ontology?
+
 Data model
 ##########
 
@@ -99,7 +103,7 @@ Data model
       - string
       - 1..1
       - An arbitrary identifier for this specific measurement. REQUIRED
-    * - experiment
+    * - assay
       - :ref:`rstontologyclass`
       - 1..1
       - The experiment performed to obtain the measurement

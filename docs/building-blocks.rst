@@ -18,6 +18,7 @@ building blocks.
 
    age
    animal
+   cohort_measurement
    individual
    experimental_cohort
    experimental_measurement
@@ -25,3 +26,4 @@ building blocks.
    ontologyclass
    project
    strain
+   study
