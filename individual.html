@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Individual &mdash; experimental-model-schema 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Experimental Cohort" href="experimental_cohort.html" />
+    <link rel="prev" title="Animal" href="animal.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            experimental-model-schema
+              <img src="_static/jax-logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to the Experimental Model Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emschema.html">Experimental Model Schema</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="building-blocks.html">EMS building blocks</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="animal.html">Animal</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Individual</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-model">Data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#explanations">Explanations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id">id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#alternate-ids">alternate_ids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#date-of-birth">date_of_birth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#time-at-last-encounter">time_at_last_encounter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vital-status">vital_status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sex">sex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#karyotypic-sex">karyotypic_sex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#taxonomy">taxonomy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="experimental_cohort.html">Experimental Cohort</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">experimental-model-schema</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="building-blocks.html">EMS building blocks</a></li>
+      <li class="breadcrumb-item active">Individual</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/individual.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="individual">
+<span id="rstindividual"></span><h1>Individual<a class="headerlink" href="#individual" title="Permalink to this heading"></a></h1>
+<p>The subject of the Experimental Model Schema is represented by an <em>Individual</em> element.
+This element intends to represent an individual model organism used in an experiment.
+Note that some experiment packets will refer to a cohort of individual models used
+for an experiment instead of an individual (See <a class="reference internal" href="experimental_cohort.html#rstexperimentalcohort"><span class="std std-ref">Experimental Cohort</span></a>).</p>
+<section id="data-model">
+<h2>Data model<a class="headerlink" href="#data-model" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Multiplicity</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>string</p></td>
+<td><p>1..1</p></td>
+<td><p>An arbitrary identifier. REQUIRED.</p></td>
+</tr>
+<tr class="row-odd"><td><p>alternate_ids</p></td>
+<td><p>a list of <span class="xref std std-ref">rstcurie</span></p></td>
+<td><p>0..*</p></td>
+<td><p>A list of alternative identifiers for the individual</p></td>
+</tr>
+<tr class="row-even"><td><p>date_of_birth</p></td>
+<td><p>timestamp</p></td>
+<td><p>0..1</p></td>
+<td><p>A timestamp either exact or imprecise</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_at_last_encounter</p></td>
+<td><p><span class="xref std std-ref">rsttimeelement</span></p></td>
+<td><p>0..1</p></td>
+<td><p>The age or age range of the individual when last encountered. RECOMMENDED.</p></td>
+</tr>
+<tr class="row-even"><td><p>vital_status</p></td>
+<td><p><span class="xref std std-ref">rstvitalstatus</span></p></td>
+<td><p>0..1</p></td>
+<td><p>The vital status of the individual e.g. whether they are alive or the time and cause of death. RECOMMENDED.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sex</p></td>
+<td><p><span class="xref std std-ref">rstsex</span></p></td>
+<td><p>0..1</p></td>
+<td><p>Observed apparent sex of the individual</p></td>
+</tr>
+<tr class="row-even"><td><p>karyotypic_sex</p></td>
+<td><p><span class="xref std std-ref">rstkaryotypicsex</span></p></td>
+<td><p>0..1</p></td>
+<td><p>The karyotypic sex of the individual</p></td>
+</tr>
+<tr class="row-odd"><td><p>gender</p></td>
+<td><p><span class="xref std std-ref">rstkaryotypicsex</span></p></td>
+<td><p>0..1</p></td>
+<td><p>Self-identified gender</p></td>
+</tr>
+<tr class="row-even"><td><p>taxonomy</p></td>
+<td><p><span class="xref std std-ref">rstontologyclass</span></p></td>
+<td><p>0..1</p></td>
+<td><p>an <span class="xref std std-ref">rstontologyclass</span> representing the species (e.g., NCBITaxon:9615)</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<p>The following example is typical but does not make use of all of the optional fields of this element.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">individual</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;patient:0&quot;</span>
+<span class="w">  </span><span class="nt">dateOfBirth</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1998-01-01T00:00:00Z&quot;</span>
+<span class="w">  </span><span class="nt">sex</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MALE&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="explanations">
+<h2>Explanations<a class="headerlink" href="#explanations" title="Permalink to this heading"></a></h2>
+<section id="id">
+<h3>id<a class="headerlink" href="#id" title="Permalink to this heading"></a></h3>
+<p>This element is the <strong>primary</strong> identifier for the individual and SHOULD be used in other parts of a message when
+referring to this individual - for example in a <span class="xref std std-ref">rstpedigree</span> or <span class="xref std std-ref">rstbiosample</span>. The contents of the element
+are context dependent, and will be determined by the application. For instance, if the Phenopacket is being used to
+represent a case study about an individual with some genetic disease, the individual may be referred to in that study by
+their position in the pedigree, e.g., III:2 for the second person in the third generation. In this case, id would be set
+to <code class="docutils literal notranslate"><span class="pre">III:2</span></code>.</p>
+<p>If a <span class="xref std std-ref">pedigree</span> element is used, it is essential that the <code class="docutils literal notranslate"><span class="pre">individual_id</span></code> of the <span class="xref std std-ref">pedigree</span> element matches
+the <code class="docutils literal notranslate"><span class="pre">id</span></code> field here.</p>
+<p>If a <span class="xref std std-ref">rstbiosample</span> element is used, it is essential that the <code class="docutils literal notranslate"><span class="pre">individual_id</span></code> of the <span class="xref std std-ref">rstbiosample</span> element
+matches the <code class="docutils literal notranslate"><span class="pre">id</span></code> field here.</p>
+<p>All identifiers within a phenopacket pertaining to an individual SHOULD use this identifier. It is the responsibility of
+the sender to provide the recipient an internally consistent message. This is possible as all messages can be created
+dynamically be the sender using identifiers appropriate for the receiving system.</p>
+<p>For example, a hospital may want to send a <span class="xref std std-ref">rstfamily</span> to an external lab for analysis. Here the hospital is providing
+an obfuscated identifier which is used to identify the individual in the <span class="xref std std-ref">rstphenopacket</span>, the <span class="xref std std-ref">rstpedigree</span> and
+mappings to the sample id in the <span class="xref std std-ref">rstfile</span>.</p>
+<p>In this case the <span class="xref std std-ref">rstpedigree</span> is created by the sending system from whatever source they use and the identifiers
+should be mapped to those <cite>Individual.id</cite> contained in the <cite>Family.proband</cite> and <cite>Family.relatives</cite> phenopackets.</p>
+<p>In the case of the VCF file, the sending system likely has no control or ability to change the identifiers used for the
+sample id and it is likely they use different identifiers. It is for this reason the <span class="xref std std-ref">rstfile</span> has a <em>local</em>
+mapping field <cite>HtsFile.individual_to_sample_identifiers</cite> where the <cite>Individual.id</cite> can be mapped to the sample id in that
+file.</p>
+<p><strong>example</strong></p>
+<p>In this example we show individual blocks which would be used as part of a singleton ‘family’ to illustrate the use of
+the internally consistent <cite>Individual.id</cite>. As noted above, the data may have been constructed by the sender from different
+sources but given they know these relationships, they should provide the receiver with a consistent view of the data both
+for ease of use and to limit incorrect mapping.</p>
+<p>Thus, we would use the same id various elements.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">individual</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;patient23456&quot;</span>
+<span class="w">  </span><span class="nt">dateOfBirth</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1998-01-01T00:00:00Z&quot;</span>
+<span class="w">  </span><span class="nt">sex</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MALE&quot;</span>
+</pre></div>
+</div>
+<p>Assuming that this individual was sequenced, we might have the following <span class="xref std std-ref">rstfile</span> element.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">htsFile</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">uri</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file://data/genomes/germline_wgs.vcf.gz&quot;</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Matched</span><span class="nv"> </span><span class="s">normal</span><span class="nv"> </span><span class="s">germline</span><span class="nv"> </span><span class="s">sample&quot;</span>
+<span class="w">    </span><span class="nt">htsFormat</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;VCF&quot;</span>
+<span class="w">    </span><span class="nt">genomeAssembly</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;GRCh38&quot;</span>
+<span class="w">    </span><span class="nt">individualToSampleIdentifiers</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">patient23456</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;NA12345&quot;</span>
+</pre></div>
+</div>
+<p>We would also use <code class="docutils literal notranslate"><span class="pre">patient23456</span></code> as the <code class="docutils literal notranslate"><span class="pre">individualId</span></code> element within a <span class="xref std std-ref">rstpedigree</span> element.</p>
+</section>
+<section id="alternate-ids">
+<h3>alternate_ids<a class="headerlink" href="#alternate-ids" title="Permalink to this heading"></a></h3>
+<p>An optional list of alternative identifiers for this individual. These should be in the form of <span class="xref std std-ref">rstcurie`s and hence have a
+corresponding :ref:`rstresource</span> listed in the <span class="xref std std-ref">rstmetadata</span>. These should <strong>not</strong> be used elsewhere in the phenopacket
+as this will break the assumptions required for using the <code class="docutils literal notranslate"><span class="pre">id</span></code> field as the primary identifier. This field is provided
+for the convenience of users who may have multiple mappings to an individual which they need to track.</p>
+</section>
+<section id="date-of-birth">
+<h3>date_of_birth<a class="headerlink" href="#date-of-birth" title="Permalink to this heading"></a></h3>
+<p>This element represents the date of birth of the individual as an <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO8601 UTC timestamp</a> that is rounded down to the closest known year/month/day/hour/minute. For example:</p>
+<ul class="simple">
+<li><p>“2018-03-01T00:00:00Z” for someone born on an unknown day in March 2018</p></li>
+<li><p>“2018-01-01T00:00:00Z” for someone born on an unknown day in 2018</p></li>
+<li><p>empty if unknown/ not stated.</p></li>
+</ul>
+<p>See <span class="xref std std-ref">here</span> for more information about timestamps.</p>
+<p>The element is provided for use cases within protected networks, but it many situations the element should not be used
+in order to protect the privacy of the individual. Instead, the <code class="docutils literal notranslate"><span class="pre">time_at_last_encounter</span></code> element should be preferred.</p>
+</section>
+<section id="time-at-last-encounter">
+<h3>time_at_last_encounter<a class="headerlink" href="#time-at-last-encounter" title="Permalink to this heading"></a></h3>
+<p>An object describing when the encounter with the patient happened or the the age of the individual at the time of collection
+of biospecimens or phenotypic observations reported in the current Phenopacket. It is specified using either an <span class="xref std std-ref">rsttimeelement</span>,
+which can represent an time in several different ways, either precisely or within a range. For example an <span class="xref std std-ref">rstage</span>
+or an <span class="xref std std-ref">rstagerange</span> element, which can represent a range of ages such as 10-14 years (age can be represented in this
+was to protect privacy of study participants).</p>
+</section>
+<section id="vital-status">
+<h3>vital_status<a class="headerlink" href="#vital-status" title="Permalink to this heading"></a></h3>
+<p>The <span class="xref std std-ref">rstvitalstatus</span> can be used to report whether the individual is living or dead at the timepoint when the phenopacket
+was created (or if the status is unknown).</p>
+</section>
+<section id="sex">
+<h3>sex<a class="headerlink" href="#sex" title="Permalink to this heading"></a></h3>
+<p>Phenopackets make use of an enumeration to denote the phenotypic sex of an individual. See <span class="xref std std-ref">rstsex</span>.</p>
+</section>
+<section id="karyotypic-sex">
+<h3>karyotypic_sex<a class="headerlink" href="#karyotypic-sex" title="Permalink to this heading"></a></h3>
+<p>Phenopackets make use of an enumeration to denote the chromosomal sex of an individual. See <span class="xref std std-ref">rstkaryotypicsex</span>.</p>
+</section>
+<section id="taxonomy">
+<h3>taxonomy<a class="headerlink" href="#taxonomy" title="Permalink to this heading"></a></h3>
+<p>For resources where there may be more than one organism being studied it is advisable to indicate the taxonomic
+identifier of that organism, to its most specific level. We advise using the
+codes from the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/taxonomy">NCBI Taxonomy</a> resource. For instance,
+NCBITaxon:9606 is human (homo sapiens sapiens) and  or NCBITaxon:9615 is dog.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="animal.html" class="btn btn-neutral float-left" title="Animal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="experimental_cohort.html" class="btn btn-neutral float-right" title="Experimental Cohort" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright The Jackson Laboratory.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

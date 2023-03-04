@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animal &mdash; experimental-model-schema 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Individual" href="individual.html" />
+    <link rel="prev" title="EMS building blocks" href="building-blocks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            experimental-model-schema
+              <img src="_static/jax-logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to the Experimental Model Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emschema.html">Experimental Model Schema</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="building-blocks.html">EMS building blocks</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Animal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-model">Data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#explanations">Explanations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#animal-id">animal_id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#animal-project-id">animal_project_id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#project-symbol">project_symbol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sex">sex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stock-number">stock_number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#strain">strain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#strain-identifier">strain_identifier</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="individual.html">Individual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental_cohort.html">Experimental Cohort</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">experimental-model-schema</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="building-blocks.html">EMS building blocks</a></li>
+      <li class="breadcrumb-item active">Animal</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/animal.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="animal">
+<span id="rstanimal"></span><h1>Animal<a class="headerlink" href="#animal" title="Permalink to this heading"></a></h1>
+<p>Individual experimental animals are represented by the <em>Animal</em> element of the Experimental Model Schema.
+This element intends to represent an individual model organism used in an experiment.
+Note that some experiment packets will refer to a cohort of individual models used
+for an experiment instead of an individual (See <a class="reference internal" href="experimental_cohort.html#rstexperimentalcohort"><span class="std std-ref">Experimental Cohort</span></a>).</p>
+<section id="data-model">
+<h2>Data model<a class="headerlink" href="#data-model" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div></div></blockquote>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<p>The following example represents a single male CC002/UncJ mouse that is being used for the JaxCC1 project.
+TODO – Any other introduction needed here?</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>animal:
+  animal_id: &quot;F148-1-dob2015-01-09&quot;
+  animal_project_id: &quot;519&quot;
+  project_symbol: &quot;JaxCC1&quot;
+  sex: &quot;MALE&quot;
+  stock_number: 42
+  taxonomy:
+      id: &quot;NCBITaxon:10090&quot;
+      label: &quot;Mus musculus&quot;
+  strain: &quot;CC002/UncJ&quot;,
+  strain_identifier: 1502
+</pre></div>
+</div>
+</section>
+<section id="explanations">
+<h2>Explanations<a class="headerlink" href="#explanations" title="Permalink to this heading"></a></h2>
+<section id="animal-id">
+<h3>animal_id<a class="headerlink" href="#animal-id" title="Permalink to this heading"></a></h3>
+<p>This element is the <strong>primary</strong> identifier for the individual animal and MUST be used in other parts of a message when
+referring to this individual. There are no further constraints on the identifier, which is application-specific.</p>
+</section>
+<section id="animal-project-id">
+<h3>animal_project_id<a class="headerlink" href="#animal-project-id" title="Permalink to this heading"></a></h3>
+<p>TODO – DOES THIS REFER TO THE EXPERIMENT – PROVIDE DEFINITION HERE</p>
+</section>
+<section id="project-symbol">
+<h3>project_symbol<a class="headerlink" href="#project-symbol" title="Permalink to this heading"></a></h3>
+<p>TODO – WHY IS THIS NEEDED IN ADDITION TO THE animal_project_id?</p>
+</section>
+<section id="sex">
+<h3>sex<a class="headerlink" href="#sex" title="Permalink to this heading"></a></h3>
+<p>An enumeration to denote the phenotypic sex of the individual animal. See <span class="xref std std-ref">rstsex</span>.</p>
+</section>
+<section id="stock-number">
+<h3>stock_number<a class="headerlink" href="#stock-number" title="Permalink to this heading"></a></h3>
+<p>WHAT IS THIS FOR AND DOES IT BELONG IN THE SCHEMA?</p>
+<section id="taxonomy">
+<h4>taxonomy<a class="headerlink" href="#taxonomy" title="Permalink to this heading"></a></h4>
+<p>The taxonomy identifier of the species of the the animal MUST be provided at its most specific level. We advise using the
+codes from the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/taxonomy">NCBI Taxonomy</a> resource. For instance,
+NCBITaxon:10090 is mouse (Mus musculus) and  or NCBITaxon:9615 is dog.</p>
+</section>
+</section>
+<section id="strain">
+<h3>strain<a class="headerlink" href="#strain" title="Permalink to this heading"></a></h3>
+<p>TODO – Decide how to represent this</p>
+</section>
+<section id="strain-identifier">
+<h3>strain_identifier<a class="headerlink" href="#strain-identifier" title="Permalink to this heading"></a></h3>
+<p>TODO – Decide how to represent this</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="building-blocks.html" class="btn btn-neutral float-left" title="EMS building blocks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="individual.html" class="btn btn-neutral float-right" title="Individual" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright The Jackson Laboratory.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

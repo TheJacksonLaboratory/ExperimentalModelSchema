@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A short introduction to protobuf &mdash; experimental-model-schema 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Experimental Model Schema" href="emschema.html" />
+    <link rel="prev" title="Ontologies" href="ontologies.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            experimental-model-schema
+              <img src="_static/jax-logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="introduction.html">Introduction to the Experimental Model Schema</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ontologies.html">Ontologies</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">A short introduction to protobuf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-protobuf">Installing protobuf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#an-example-schema">An example schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-generated-code">Using the generated code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#serialization">Serialization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="emschema.html">Experimental Model Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building-blocks.html">EMS building blocks</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">experimental-model-schema</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="introduction.html">Introduction to the Experimental Model Schema</a></li>
+      <li class="breadcrumb-item active">A short introduction to protobuf</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/protobuf.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="a-short-introduction-to-protobuf">
+<span id="rstprotobuf"></span><h1>A short introduction to protobuf<a class="headerlink" href="#a-short-introduction-to-protobuf" title="Permalink to this heading"></a></h1>
+<p>Phenopackets schema uses protobuf, an exchange format developed in 2008 by Google. We refer readers to the
+excellent <a class="reference external" href="https://en.wikipedia.org/wiki/Protocol_Buffers">Wikipedia page on Protobuf</a> and
+to <a class="reference external" href="https://developers.google.com/protocol-buffers/">Google’s documentation</a> for details. This page
+intends to get curious readers who are unfamiliar with protobuf up to speed with the main aspects of this
+technology, but it is not necessary to understand protobuf to use the phenopacket schema.</p>
+<p>Google initially developed Protocol Buffers (protobuf) for internal use, but now has provided a code generator for multiple languages under an open source license. In this documentation, we will demonstrate use of phenopacket-schema with Java, but all of the features are available in any of the languages that protobuf works with including C++ and Python.</p>
+<p>The major advantages of protobuf are that it is language-neutral, faster than many other schema languages such as XML and JSON, and can be simpler to use because of features such as automatic validation of data objects.</p>
+<p>Protobuf forsees that data structures (so-called <strong>messages</strong>) are defined in a definition file (with the suffix .proto) and compiled to generate code that is invoked by the sender or recipient of the data to encode/decode the data.</p>
+<section id="installing-protobuf">
+<h2>Installing protobuf<a class="headerlink" href="#installing-protobuf" title="Permalink to this heading"></a></h2>
+<p>The following exercise is not necessary to use phenopacket-schema,
+but is intended to build intuition for how protobuf works.
+We first need to install protobuf (Note that these instructions are for this tutorial only. The maven system will automatically
+pull in protobuf for phenopackets schema). We show one simple way of installing protobuf on a linux system in the following.</p>
+<ol class="arabic simple">
+<li><p>Download the source code from the <a class="reference external" href="https://github.com/protocolbuffers/protobuf">protobuf GitHub page</a>. Most users should download the latest tar.gz archive from the Release page. Extract the code.</p></li>
+<li><p>Install the code as follows (to do so, you will need the packages autoconf, automake, libtool, curl, make, g++, unzip).</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure
+make
+make<span class="w"> </span>check
+sudo<span class="w"> </span>make<span class="w"> </span>install
+sudo<span class="w"> </span>ldconfig<span class="w"> </span><span class="c1"># refresh shared library cache.</span>
+</pre></div>
+</div>
+<p>You now should check if installation was successful</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>protoc<span class="w"> </span>--version
+libprotoc<span class="w"> </span><span class="m">3</span>.8.0
+</pre></div>
+</div>
+</section>
+<section id="an-example-schema">
+<h2>An example schema<a class="headerlink" href="#an-example-schema" title="Permalink to this heading"></a></h2>
+<p>protobuf represents data as messages whose fields are indicated and aliased with a number and tag. Fields can be required, optional, or repeated.
+The following message describes a dog. The name is represented as a string, and the field is indicated with the number 1. The weight of the dog is represented as an integer.
+The toys field can store multiple items represented as a string. Note that in protobuf3,
+it is not possible to define a field as required.</p>
+<div class="highlight-proto notranslate"><div class="highlight"><pre><span></span><span class="k">syntax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;proto3&quot;</span><span class="p">;</span>
+
+<span class="kd">message</span><span class="w"> </span><span class="nc">dog</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">required</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int32</span><span class="w"> </span><span class="na">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">repeated</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="na">toys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>We can compile this code with the following command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>protoc<span class="w"> </span>-I<span class="o">=</span>.<span class="w"> </span>--java_out<span class="o">=</span>.<span class="w"> </span>dog.proto
+</pre></div>
+</div>
+<p>This will generate a Java file called <code class="docutils literal notranslate"><span class="pre">Dog.java</span></code> with code to create, import, and export protobuf data. For example, the weight field is represented as follows.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">WEIGHT_FIELD_NUMBER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">weight_</span><span class="p">;</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getWeight</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">weight_</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>It is highly recommended to peruse the complete Java file, but we will leave that as an exercise for the reader.</p>
+</section>
+<section id="using-the-generated-code">
+<h2>Using the generated code<a class="headerlink" href="#using-the-generated-code" title="Permalink to this heading"></a></h2>
+<p>We can now easily use a generated code to create Java instance of the Dog class. We will not provide a complete maven tutorial here, but the
+key things that need to be done to get this to work are the following.</p>
+<ol class="arabic">
+<li><p>set up a maven-typical directory structure such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">src</span>
+<span class="o">--</span><span class="n">main</span>
+<span class="o">----</span><span class="n">java</span>
+<span class="o">------</span><span class="n">org</span>
+<span class="o">--------</span><span class="n">example</span>
+<span class="o">----</span><span class="n">proto</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Add the following to the dependencies</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">  </span><span class="nt">&lt;groupId&gt;</span>com.google.protobuf<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>protobuf-java<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;version&gt;</span>3.5.1<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+</div>
+<p>and add the following to the plugin section</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;plugin&gt;</span>
+<span class="w">  </span><span class="nt">&lt;groupId&gt;</span>org.xolstice.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>protobuf-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;version&gt;</span>0.5.1<span class="nt">&lt;/version&gt;</span>
+<span class="w">  </span><span class="nt">&lt;extensions&gt;</span>true<span class="nt">&lt;/extensions&gt;</span>
+<span class="w">  </span><span class="nt">&lt;configuration&gt;</span>
+<span class="w">    </span><span class="nt">&lt;protocExecutable&gt;</span>/usr/local/bin/protoc<span class="nt">&lt;/protocExecutable&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/configuration&gt;</span>
+<span class="w">  </span><span class="nt">&lt;executions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;execution&gt;</span>
+<span class="w">      </span><span class="nt">&lt;goals&gt;</span>
+<span class="w">        </span><span class="nt">&lt;goal&gt;</span>compile<span class="nt">&lt;/goal&gt;</span>
+<span class="w">        </span><span class="nt">&lt;goal&gt;</span>test-compile<span class="nt">&lt;/goal&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/goals&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/execution&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/executions&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</pre></div>
+</div>
+<p>This is the simplest configuration of the <a class="reference external" href="https://www.xolstice.org/protobuf-maven-plugin/usage.html">xolstice plugin</a>; see the documentation for further information. We have assumed that protoc is installed in /usr/local/bin in the above, and the path may need to be adjusted on your system.</p>
+<p>Add the protobuf definition to the proto directory. Add a class such as <em>Main.java</em> in the /src/main/java/org/example directory (package: org.example). For simplicity, the following code snippets could be written in the main method</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Fido&quot;</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="n">String</span><span class="w"> </span><span class="n">toy1</span><span class="o">=</span><span class="s">&quot;bone&quot;</span><span class="p">;</span>
+<span class="n">String</span><span class="w"> </span><span class="n">toy2</span><span class="o">=</span><span class="s">&quot;ball&quot;</span><span class="p">;</span>
+
+<span class="n">Dog</span><span class="p">.</span><span class="na">dog</span><span class="w"> </span><span class="n">fido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dog</span><span class="p">.</span><span class="na">dog</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+<span class="w">             </span><span class="p">.</span><span class="na">setName</span><span class="p">(</span><span class="n">name</span><span class="p">).</span>
+<span class="w">             </span><span class="n">setWeight</span><span class="p">(</span><span class="n">weight</span><span class="p">).</span>
+<span class="w">             </span><span class="n">addToys</span><span class="p">(</span><span class="n">toy1</span><span class="p">).</span>
+<span class="w">             </span><span class="n">addToys</span><span class="p">(</span><span class="n">toy2</span><span class="p">).</span>
+<span class="w">             </span><span class="n">build</span><span class="p">();</span>
+
+<span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">fido</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;; weight: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fido</span><span class="p">.</span><span class="na">getWeight</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;kg;  favorite toys: &quot;</span>
+<span class="w">     </span><span class="o">+</span><span class="w"> </span><span class="n">fido</span><span class="p">.</span><span class="na">getToysList</span><span class="p">().</span><span class="na">stream</span><span class="p">().</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">joining</span><span class="p">(</span><span class="s">&quot;; &quot;</span><span class="p">)));</span>
+</pre></div>
+</div>
+<p>The code can be compiled with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mvn<span class="w"> </span>clean<span class="w"> </span>package
+</pre></div>
+</div>
+<p>If we run the demo app, it should output the following.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Fido; weight: 5kg;  favorite toys: bone; ball``.
+</pre></div>
+</div>
+<section id="serialization">
+<h3>Serialization<a class="headerlink" href="#serialization" title="Permalink to this heading"></a></h3>
+<p>The following code snippet serializes the Java object fido and writes the serialized message to disk, then reads the message and displays it.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// serialize</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">filePath</span><span class="o">=</span><span class="s">&quot;fido.pb&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">FileOutputStream</span><span class="w"> </span><span class="n">fos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileOutputStream</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span>
+<span class="w">    </span><span class="n">fido</span><span class="p">.</span><span class="na">writeTo</span><span class="p">(</span><span class="n">fos</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// deserialize</span>
+<span class="w">    </span><span class="n">Dog</span><span class="p">.</span><span class="na">dog</span><span class="w"> </span><span class="n">deserialized</span>
+<span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="n">Dog</span><span class="p">.</span><span class="na">dog</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="na">mergeFrom</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="n">filePath</span><span class="p">)).</span><span class="na">build</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;deserialized: &quot;</span><span class="o">+</span><span class="n">deserialized</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;; weight: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">deserialized</span><span class="p">.</span><span class="na">getWeight</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;kg;  favorite toys: &quot;</span>
+<span class="w">            </span><span class="o">+</span><span class="w"> </span><span class="n">deserialized</span><span class="p">.</span><span class="na">getToysList</span><span class="p">().</span><span class="na">stream</span><span class="p">().</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">joining</span><span class="p">(</span><span class="s">&quot;; &quot;</span><span class="p">)));</span>
+
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">ioe</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ioe</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The code should output the following.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deserialized</span><span class="p">:</span> <span class="n">Fido</span><span class="p">;</span> <span class="n">weight</span><span class="p">:</span> <span class="mi">5</span><span class="n">kg</span><span class="p">;</span>  <span class="n">favorite</span> <span class="n">toys</span><span class="p">:</span> <span class="n">bone</span><span class="p">;</span> <span class="n">ball</span>
+</pre></div>
+</div>
+<p>We hope that this brief introduction was useful and refer to <a class="reference external" href="https://developers.google.com/protocol-buffers/">Google’s documentation</a> for more details.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ontologies.html" class="btn btn-neutral float-left" title="Ontologies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="emschema.html" class="btn btn-neutral float-right" title="Experimental Model Schema" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright The Jackson Laboratory.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
