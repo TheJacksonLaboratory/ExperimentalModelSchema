@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Experimental Measaurement &mdash; experimental-model-schema 0.0.1 documentation</title>
+  <title>Experimental Measurement &mdash; experimental-model-schema 0.0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -55,7 +55,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cohort_measurement.html">CohortMeasurement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="individual.html">Individual</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental_cohort.html">Experimental Cohort</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Experimental Measaurement</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Experimental Measurement</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#suggestion">Suggestion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#data-model">Data model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
@@ -63,8 +63,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="metadata.html">MetaData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_genotype.html">ModelGenotype</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ontologyclass.html">OntologyClass</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project.html">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol.html">Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="researcher.html">Researcher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strain.html">Strain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="study.html">Study</a></li>
 </ul>
@@ -86,7 +89,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="building-blocks.html">EMS building blocks</a></li>
-      <li class="breadcrumb-item active">Experimental Measaurement</li>
+      <li class="breadcrumb-item active">Experimental Measurement</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/experimental_measurement.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -96,8 +99,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="experimental-measaurement">
-<span id="rstexperimental-measurement"></span><h1>Experimental Measaurement<a class="headerlink" href="#experimental-measaurement" title="Permalink to this heading"></a></h1>
+  <section id="experimental-measurement">
+<span id="rstexperimental-measurement"></span><h1>Experimental Measurement<a class="headerlink" href="#experimental-measurement" title="Permalink to this heading"></a></h1>
 <p>The subject of the Experimental Model Schema is represented by an <em>Individual</em> element.
 This element intends to represent an individual model organism used in an experiment.
 Note that some experiment packets will refer to a cohort of individual models used
@@ -106,6 +109,36 @@ for an experiment instead of an individual (See <a class="reference internal" hr
 <section id="suggestion">
 <h2>Suggestion<a class="headerlink" href="#suggestion" title="Permalink to this heading"></a></h2>
 <p>The data that is current in MPD looks like this</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&quot;animaldata&quot;: [</span>
+<span class="go">{</span>
+<span class="go">  &quot;animal_id&quot;: &quot;F148-1-dob2015-01-09&quot;,</span>
+<span class="go">  &quot;animal_projid&quot;: 519,</span>
+<span class="go">  &quot;measnum&quot;: 89013,</span>
+<span class="go">  &quot;projsym&quot;: &quot;JaxCC1&quot;,</span>
+<span class="go">  &quot;sex&quot;: &quot;f&quot;,</span>
+<span class="go">  &quot;stocknum&quot;: &quot;021236&quot;,</span>
+<span class="go">  &quot;strain&quot;: &quot;CC002/UncJ&quot;,</span>
+<span class="go">  &quot;strainid&quot;: 1502,</span>
+<span class="go">  &quot;value&quot;: 2117.0,</span>
+<span class="go">  &quot;varname&quot;: &quot;distance_total_OF&quot;,</span>
+<span class="go">  &quot;zscore&quot;: -0.78</span>
+<span class="go">},</span>
+<span class="go">{</span>
+<span class="go">  &quot;animal_id&quot;: &quot;F148-2-dob2015-01-09&quot;,</span>
+<span class="go">  &quot;animal_projid&quot;: 519,</span>
+<span class="go">  &quot;measnum&quot;: 89013,</span>
+<span class="go">  &quot;projsym&quot;: &quot;JaxCC1&quot;,</span>
+<span class="go">  &quot;sex&quot;: &quot;f&quot;,</span>
+<span class="go">  &quot;stocknum&quot;: &quot;021236&quot;,</span>
+<span class="go">  &quot;strain&quot;: &quot;CC002/UncJ&quot;,</span>
+<span class="go">  &quot;strainid&quot;: 1502,</span>
+<span class="go">  &quot;value&quot;: 2887.0,</span>
+<span class="go">  &quot;varname&quot;: &quot;distance_total_OF&quot;,</span>
+<span class="go">  &quot;zscore&quot;: 0.78</span>
+<span class="go">}, ....</span>
+</pre></div>
+</div>
+<p>and like this</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">measures_info&quot;: [</span>
 <span class="go">    {</span>
 <span class="go">      &quot;ageweeks&quot;: &quot;7-9wks&quot;,</span>

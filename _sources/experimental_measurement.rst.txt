@@ -1,8 +1,8 @@
 .. _rstexperimental_measurement:
 
-#########################
-Experimental Measaurement
-#########################
+########################
+Experimental Measurement
+########################
 
 The subject of the Experimental Model Schema is represented by an *Individual* element.
 This element intends to represent an individual model organism used in an experiment.
@@ -16,6 +16,38 @@ Suggestion
 ##########
 
 The data that is current in MPD looks like this
+
+.. code-block:: console
+
+    "animaldata": [
+    {
+      "animal_id": "F148-1-dob2015-01-09",
+      "animal_projid": 519,
+      "measnum": 89013,
+      "projsym": "JaxCC1",
+      "sex": "f",
+      "stocknum": "021236",
+      "strain": "CC002/UncJ",
+      "strainid": 1502,
+      "value": 2117.0,
+      "varname": "distance_total_OF",
+      "zscore": -0.78
+    },
+    {
+      "animal_id": "F148-2-dob2015-01-09",
+      "animal_projid": 519,
+      "measnum": 89013,
+      "projsym": "JaxCC1",
+      "sex": "f",
+      "stocknum": "021236",
+      "strain": "CC002/UncJ",
+      "strainid": 1502,
+      "value": 2887.0,
+      "varname": "distance_total_OF",
+      "zscore": 0.78
+    }, ....
+
+and like this
 
 .. code-block:: console
 
