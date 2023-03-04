@@ -25,5 +25,6 @@ building blocks.
    metadata
    ontologyclass
    project
+   researcher
    strain
    study
