@@ -3,7 +3,6 @@ syntax = "proto3";
 package org.jax.experimental.schema.core;
 
 import "google/protobuf/timestamp.proto";
-import "phenopackets/schema/v2/core/base.proto";
 
 option java_multiple_files = true;
 option java_package = "org.jax.experimental.schema.core";
