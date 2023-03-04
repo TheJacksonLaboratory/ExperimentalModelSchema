@@ -52,6 +52,7 @@
 <li class="toctree-l2"><a class="reference internal" href="age.html#agerange">AgeRange</a></li>
 <li class="toctree-l2"><a class="reference internal" href="age.html#gestationalage">GestationalAge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="animal.html">Animal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cohort_measurement.html">CohortMeasurement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="individual.html">Individual</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental_cohort.html">Experimental Cohort</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Experimental Measaurement</a><ul>
@@ -65,6 +66,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ontologyclass.html">OntologyClass</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project.html">Project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strain.html">Strain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="study.html">Study</a></li>
 </ul>
 </li>
 </ul>
@@ -165,6 +167,9 @@ levels, gross locomotor activity, and exploration habits in rodent models.</p>
 </div>
 <p>Then, we would refer to this term instead of the  descrip, descrip2, extname, measnum, and method fields (and possibly some of the
 other fields) in the EMS.</p>
+<p>In bioconnect, I am seeing things like this – JAXAS000001
+longitudinal mass measurement assay, but it is unclear where to get info about <em>JAXAS000001</em> – is this intended to
+be a controlled terminology or ontology?</p>
 </section>
 <section id="data-model">
 <h2>Data model<a class="headerlink" href="#data-model" title="Permalink to this heading"></a></h2>
@@ -190,7 +195,7 @@ other fields) in the EMS.</p>
 <td><p>1..1</p></td>
 <td><p>An arbitrary identifier for this specific measurement. REQUIRED</p></td>
 </tr>
-<tr class="row-odd"><td><p>experiment</p></td>
+<tr class="row-odd"><td><p>assay</p></td>
 <td><p><a class="reference internal" href="ontologyclass.html#rstontologyclass"><span class="std std-ref">OntologyClass</span></a></p></td>
 <td><p>1..1</p></td>
 <td><p>The experiment performed to obtain the measurement</p></td>

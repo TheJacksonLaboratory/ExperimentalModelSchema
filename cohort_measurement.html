@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OntologyClass &mdash; experimental-model-schema 0.0.1 documentation</title>
+  <title>CohortMeasurement &mdash; experimental-model-schema 0.0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -19,8 +19,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Project" href="project.html" />
-    <link rel="prev" title="MetaData" href="metadata.html" /> 
+    <link rel="next" title="Individual" href="individual.html" />
+    <link rel="prev" title="Animal" href="animal.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,21 +52,12 @@
 <li class="toctree-l2"><a class="reference internal" href="age.html#agerange">AgeRange</a></li>
 <li class="toctree-l2"><a class="reference internal" href="age.html#gestationalage">GestationalAge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="animal.html">Animal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cohort_measurement.html">CohortMeasurement</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CohortMeasurement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="individual.html">Individual</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental_cohort.html">Experimental Cohort</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental_measurement.html">Experimental Measaurement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metadata.html">MetaData</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">OntologyClass</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#data-model">Data model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#explanations">Explanations</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id">id</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#label">label</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="ontologyclass.html">OntologyClass</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project.html">Project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strain.html">Strain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="study.html">Study</a></li>
@@ -89,9 +80,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="building-blocks.html">EMS building blocks</a></li>
-      <li class="breadcrumb-item active">OntologyClass</li>
+      <li class="breadcrumb-item active">CohortMeasurement</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/ontologyclass.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/cohort_measurement.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -99,72 +90,68 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ontologyclass">
-<span id="rstontologyclass"></span><h1>OntologyClass<a class="headerlink" href="#ontologyclass" title="Permalink to this heading"></a></h1>
-<p>This element is used to represent classes (terms) from ontologies, and is used in many places throughout the
-Phenopacket standard. It is a simple, two element message that represents the identifier and the label of
-an ontology class.</p>
-<p>The ID SHALL be a CURIE-style identifier e.g. HP:0100024, MP:0001284, UBERON:0001690, i.e., the primary key for the
-ontology class. The label should be the corresponding class name. The Phenopacket standard REQUIRES that the id and the
-label match in the original ontology. We note that occasionally, ontology maintainers change the primary label of a
-term.</p>
-<section id="data-model">
-<h2>Data model<a class="headerlink" href="#data-model" title="Permalink to this heading"></a></h2>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Field</p></th>
-<th class="head"><p>Type</p></th>
-<th class="head"><p>Multiplicity</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>id</p></td>
-<td><p>string</p></td>
-<td><p>1..1</p></td>
-<td><p>a CURIE-style identifier e.g.</p></td>
-<td><p>MP:0013414. REQUIRED.</p></td>
-</tr>
-<tr class="row-odd"><td><p>label</p></td>
-<td><p>string</p></td>
-<td><p>1..1</p></td>
-<td><p>human-readable class name e.g.</p></td>
-<td><p>decreased myeloid cell number in bone marrow. REQUIRED.</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ontologyClass</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MP:0013414&quot;</span>
-<span class="w">    </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;decreased</span><span class="nv"> </span><span class="s">myeloid</span><span class="nv"> </span><span class="s">cell</span><span class="nv"> </span><span class="s">number</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">bone</span><span class="nv"> </span><span class="s">marrow&quot;</span>
+  <section id="cohortmeasurement">
+<span id="rstcohortmeasurement"></span><h1>CohortMeasurement<a class="headerlink" href="#cohortmeasurement" title="Permalink to this heading"></a></h1>
+<p>Some of our data is available as the aggregate measurements for a group of experimental animals.
+An example is shown below. The implicit assumption is that the measurements are normally distributed <strong>TODO</strong> decide if
+the EMS should commit to the assumption of Normality.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&quot;strainmeans&quot;: [</span>
+<span class="go">    {</span>
+<span class="go">      &quot;cv&quot;: 0.1963,</span>
+<span class="go">      &quot;maxval&quot;: 3119.0,</span>
+<span class="go">      &quot;mean&quot;: 2502.0,</span>
+<span class="go">      &quot;measnum&quot;: 89013,</span>
+<span class="go">      &quot;minval&quot;: 1782.0,</span>
+<span class="go">      &quot;nmice&quot;: 8,</span>
+<span class="go">      &quot;sd&quot;: 491.1,</span>
+<span class="go">      &quot;sem&quot;: 173.6,</span>
+<span class="go">      &quot;sex&quot;: &quot;f&quot;,</span>
+<span class="go">      &quot;strain&quot;: &quot;CC002/UncJ&quot;,</span>
+<span class="go">      &quot;strainid&quot;: 1502,</span>
+<span class="go">      &quot;varname&quot;: &quot;distance_total_OF&quot;,</span>
+<span class="go">      &quot;zscore&quot;: -0.36</span>
+<span class="go">    },</span>
+<span class="go">    {</span>
+<span class="go">      &quot;cv&quot;: 0.1071,</span>
+<span class="go">      &quot;maxval&quot;: 4936.0,</span>
+<span class="go">      &quot;mean&quot;: 4195.0,</span>
+<span class="go">      &quot;measnum&quot;: 89013,</span>
+<span class="go">      &quot;minval&quot;: 3821.0,</span>
+<span class="go">      &quot;nmice&quot;: 5,</span>
+<span class="go">      &quot;sd&quot;: 449.1,</span>
+<span class="go">      &quot;sem&quot;: 200.8,</span>
+<span class="go">      &quot;sex&quot;: &quot;f&quot;,</span>
+<span class="go">      &quot;strain&quot;: &quot;CC003/UncJ&quot;,</span>
+<span class="go">      &quot;strainid&quot;: 1503,</span>
+<span class="go">      &quot;varname&quot;: &quot;distance_total_OF&quot;,</span>
+<span class="go">      &quot;zscore&quot;: 0.62</span>
+<span class="go">    },</span>
 </pre></div>
 </div>
-</section>
-<section id="explanations">
-<h2>Explanations<a class="headerlink" href="#explanations" title="Permalink to this heading"></a></h2>
-<section id="id">
-<h3>id<a class="headerlink" href="#id" title="Permalink to this heading"></a></h3>
-<p>The ID of an OntologyClass element MUST take the form of a <span class="xref std std-ref">rstcurie</span> format.
-In order that the class is resolvable, it MUST reference the namespace prefix of a <span class="xref std std-ref">rstresource</span> named in the
-<a class="reference internal" href="metadata.html#rstmetadata"><span class="std std-ref">MetaData</span></a>.</p>
-</section>
-<section id="label">
-<h3>label<a class="headerlink" href="#label" title="Permalink to this heading"></a></h3>
-<p>The the human-readable label for the concept. This MUST match the ID in the ontology referenced by the namespace prefix
-in a <span class="xref std std-ref">rstresource</span> named in the <a class="reference internal" href="metadata.html#rstmetadata"><span class="std std-ref">MetaData</span></a>.</p>
-</section>
-</section>
+<p>Initial mapping</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">message CohortMeasurement {</span>
+<span class="go">  string id = 1;</span>
+<span class="go">  int32 number_of_animals = 2;</span>
+<span class="go">  OntologyClass strain = 3;</span>
+<span class="go">  OntologyClass assay = 4;</span>
+<span class="go">  Sex sex = 5;</span>
+<span class="go">  double mean = 6;</span>
+<span class="go">  double minimum_value = 7;</span>
+<span class="go">  double maximum_value = 8;</span>
+<span class="go">  double standard_deviation = 9;</span>
+<span class="go">  double standard_error_of_mean = 10;</span>
+<span class="go">  double zscore = 11;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="metadata.html" class="btn btn-neutral float-left" title="MetaData" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="project.html" class="btn btn-neutral float-right" title="Project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="animal.html" class="btn btn-neutral float-left" title="Animal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="individual.html" class="btn btn-neutral float-right" title="Individual" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

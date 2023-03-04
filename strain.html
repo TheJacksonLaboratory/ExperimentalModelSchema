@@ -19,6 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Study" href="study.html" />
     <link rel="prev" title="Project" href="project.html" /> 
 </head>
 
@@ -51,6 +52,7 @@
 <li class="toctree-l2"><a class="reference internal" href="age.html#agerange">AgeRange</a></li>
 <li class="toctree-l2"><a class="reference internal" href="age.html#gestationalage">GestationalAge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="animal.html">Animal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cohort_measurement.html">CohortMeasurement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="individual.html">Individual</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental_cohort.html">Experimental Cohort</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental_measurement.html">Experimental Measaurement</a></li>
@@ -58,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ontologyclass.html">OntologyClass</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project.html">Project</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Strain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="study.html">Study</a></li>
 </ul>
 </li>
 </ul>
@@ -98,43 +101,32 @@ but this information is not currently easily available at the JAX webpage.</p>
 Probably some sort of a strain ontology would be good so that all of the information about a strain lives externally
 to the experimental packets and we can just use an ontology term to refer to them.</p>
 <p><strong>TODO</strong> Are there data required to denote the particular version of a strain used for some experiment?</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
+<span class="go">  &quot;jaxinfo&quot;: [</span>
+<span class="go">    {</span>
+<span class="go">      &quot;avl_status&quot;: &quot;Repository Live&quot;,</span>
+<span class="go">      &quot;nomenclature&quot;: &quot;CC002/UncJ&quot;,</span>
+<span class="go">      &quot;stocknum&quot;: &quot;021236&quot;</span>
+<span class="go">    }</span>
+<span class="go">  ],</span>
+<span class="go">  &quot;mpdinfo&quot;: [</span>
+<span class="go">    {</span>
+<span class="go">      &quot;aname&quot;: &quot;CC002/UncJ&quot;,</span>
+<span class="go">      &quot;id&quot;: 1502,</span>
+<span class="go">      &quot;jaxavl&quot;: &quot;Repository Live&quot;,</span>
+<span class="go">      &quot;longname&quot;: &quot;CC002/UncJ&quot;,</span>
+<span class="go">      &quot;mginum&quot;: &quot;MGI:5649080&quot;,</span>
+<span class="go">      &quot;nproj&quot;: 9,</span>
+<span class="go">      &quot;nsnpproj&quot;: null,</span>
+<span class="go">      &quot;panelsym&quot;: &quot;CC&quot;,</span>
+<span class="go">      &quot;stocknum&quot;: &quot;021236&quot;,</span>
+<span class="go">      &quot;straintype&quot;: &quot;RI&quot;,</span>
+<span class="go">      &quot;vendor&quot;: &quot;J&quot;</span>
+<span class="go">    }</span>
+<span class="go">  ]</span>
+<span class="go">}</span>
 </pre></div>
 </div>
-<dl>
-<dt>{</dt><dd><dl>
-<dt>“jaxinfo”: [</dt><dd><dl class="simple">
-<dt>{</dt><dd><p>“avl_status”: “Repository Live”,
-“nomenclature”: “CC002/UncJ”,
-“stocknum”: “021236”</p>
-</dd>
-</dl>
-<p>}</p>
-</dd>
-</dl>
-<p>],
-“mpdinfo”: [</p>
-<blockquote>
-<div><dl class="simple">
-<dt>{</dt><dd><p>“aname”: “CC002/UncJ”,
-“id”: 1502,
-“jaxavl”: “Repository Live”,
-“longname”: “CC002/UncJ”,
-“mginum”: “MGI:5649080”,
-“nproj”: 9,
-“nsnpproj”: null,
-“panelsym”: “CC”,
-“stocknum”: “021236”,
-“straintype”: “RI”,
-“vendor”: “J”</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
-<p>]</p>
-</dd>
-</dl>
-<p>}</p>
 </section>
 
 
@@ -142,6 +134,7 @@ to the experimental packets and we can just use an ontology term to refer to the
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="project.html" class="btn btn-neutral float-left" title="Project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="study.html" class="btn btn-neutral float-right" title="Study" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

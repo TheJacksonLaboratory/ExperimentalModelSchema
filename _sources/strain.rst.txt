@@ -18,28 +18,27 @@ to the experimental packets and we can just use an ontology term to refer to the
 
 .. code-block:: console
 
-
-{
-  "jaxinfo": [
     {
-      "avl_status": "Repository Live",
-      "nomenclature": "CC002/UncJ",
-      "stocknum": "021236"
+      "jaxinfo": [
+        {
+          "avl_status": "Repository Live",
+          "nomenclature": "CC002/UncJ",
+          "stocknum": "021236"
+        }
+      ],
+      "mpdinfo": [
+        {
+          "aname": "CC002/UncJ",
+          "id": 1502,
+          "jaxavl": "Repository Live",
+          "longname": "CC002/UncJ",
+          "mginum": "MGI:5649080",
+          "nproj": 9,
+          "nsnpproj": null,
+          "panelsym": "CC",
+          "stocknum": "021236",
+          "straintype": "RI",
+          "vendor": "J"
+        }
+      ]
     }
-  ],
-  "mpdinfo": [
-    {
-      "aname": "CC002/UncJ",
-      "id": 1502,
-      "jaxavl": "Repository Live",
-      "longname": "CC002/UncJ",
-      "mginum": "MGI:5649080",
-      "nproj": 9,
-      "nsnpproj": null,
-      "panelsym": "CC",
-      "stocknum": "021236",
-      "straintype": "RI",
-      "vendor": "J"
-    }
-  ]
-}
