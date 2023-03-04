@@ -1,9 +1,8 @@
 syntax = "proto3";
 
 package org.jax.experimental.schema;
-//import "experimental/schema/core/phenotypic_feature.proto";
 import "experimental/schema/core/base.proto";
-
+import "experimental/schema/core/phenotypic_feature.proto";
 
 option java_multiple_files = true;
 option java_package = "org.experimental.schema";
@@ -21,7 +20,7 @@ message ExperimentalModel {
     string id = 1;
 
     // Phenotypic features relating to the subject of the phenopacket
-    //repeated phenopackets.schema.v2.core.PhenotypicFeature phenotypic_features = 3;
+    repeated org.experimental.schema.core.PhenotypicFeature phenotypic_features = 3;
 
     // Quantifiable measurements related to the individual
    // repeated phenopackets.schema.v2.core.Measurement measurements = 4;
