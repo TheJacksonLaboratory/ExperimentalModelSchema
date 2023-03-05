@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package org.jax.experimental.schema.core;
+package org.experimental.schema.core;
 
 import "experimental/schema/core/base.proto";
 
 option java_multiple_files = true;
-option java_package = "org.jax.experimental.schema.core";
+option java_package = "org.experimental.schema.core";
 
 // An individual phenotypic feature, observed as either present or absent (negated), with possible onset, modifiers and
 // frequency
@@ -27,22 +27,11 @@ message PhenotypicFeature {
   // *CAUTION* It is imperative to check this field for correct interpretation of the phenotype!
   bool excluded = 3;
 
-  // Severity of the condition e.g. subclasses of HP:0012824-Severity or SNOMED:272141005-Severities
-  // FHIR mapping: Condition.severity
-  OntologyClass severity = 4;
-
-  // subclasses of HP:0012823 ! Clinical modifier apart from Severity HP:0012824 - Severity
-  repeated OntologyClass modifiers = 5;
-
-  // the values of this will come from the HPO onset hierarchy
-  // i.e. subclasses of HP:0003674
-  // FHIR mapping: Condition.onset
-  TimeElement onset = 6;
-
-  TimeElement resolution = 7;
+  // the age of the model at the time the experiment was performed
+  AgeElement observed_at_age = 4;
 
   // Evidences for how the phenotype was determined.
-  repeated Evidence evidence = 8;
+  repeated Evidence evidence = 5;
 
 
 }

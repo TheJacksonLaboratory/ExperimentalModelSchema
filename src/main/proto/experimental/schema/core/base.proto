@@ -1,12 +1,9 @@
 syntax = "proto3";
 
-package org.jax.experimental.schema.core;
-
-import "google/protobuf/timestamp.proto";
-import "phenopackets/schema/v2/core/base.proto";
+package org.experimental.schema.core;
 
 option java_multiple_files = true;
-option java_package = "org.jax.experimental.schema.core";
+option java_package = "org.experimental.schema.core";
 
 
 // A class (aka term, concept) in an ontology.
@@ -60,8 +57,7 @@ message Procedure {
   // FHIR mapping: Procedure.bodySite
   OntologyClass body_site = 2;
 
-  // When the procedure was performed.
-  TimeElement performed = 3;
+    AgeElement age_performed = 3;
 }
 
 message GestationalAge {
@@ -69,12 +65,14 @@ message GestationalAge {
   int32 days = 2;
 }
 
-// See http://build.fhir.org/datatypes and http://build.fhir.org/condition-definitions.html#Condition.onset_x_
-// In FHIR this is represented as a UCUM measurement - http://unitsofmeasure.org/trac/
+// TODO  -- What is the standard way of representing Age for mouse models?
 message Age {
   // The :ref:`ISO 8601<metadata_date_time>` age of this object as ISO8601
   // duration or time intervals. e.g. P40Y10M05D)
-  string iso8601duration = 1;
+  //string iso8601duration = 1;
+  int32 years = 1;
+  int32 weeks = 2;
+  int32 days = 3;
 }
 
 message AgeRange {
@@ -82,19 +80,11 @@ message AgeRange {
   Age end = 2;
 }
 
-message TimeInterval {
-  google.protobuf.Timestamp start = 1;
-  google.protobuf.Timestamp end = 2;
-}
-
-message TimeElement {
+message AgeElement {
   oneof element {
     GestationalAge gestational_age = 6;
     Age age = 1;
     AgeRange age_range = 2;
-    OntologyClass ontology_class = 3;
-    google.protobuf.Timestamp timestamp = 4;
-    TimeInterval interval = 5;
   }
 }
 
@@ -109,4 +99,17 @@ message File {
   // Map of attributes describing the file. For example the File format or genome assembly would be defied here. For
   // genomic data files there MUST be a 'genomeAssembly' key.
   map<string, string> file_attributes = 3;
+}
+
+
+// Sex of an individual
+enum Sex {
+  // Not assessed / available.
+  UNKNOWN_SEX = 0;
+  // Female
+  FEMALE = 1;
+  // Male
+  MALE = 2;
+  // It is not possible, to accurately assess the applicability of MALE/FEMALE.
+  OTHER_SEX = 3;
 }

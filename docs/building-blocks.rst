@@ -16,5 +16,16 @@ building blocks.
 .. toctree::
    :maxdepth: 1
 
-   individual
+   age
+   animal
+   cohort_measurement
    experimental_cohort
+   experimental_measurement
+   metadata
+   model_genotype
+   ontologyclass
+   project
+   protocol
+   researcher
+   strain
+   study

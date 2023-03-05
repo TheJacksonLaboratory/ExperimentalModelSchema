@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package org.experimental.schema.core;
+
+import "google/protobuf/timestamp.proto";
+import "experimental/schema/core/base.proto";
+
+option java_multiple_files = true;
+option java_package =  "org.experimental.schema.core";;
+
+message ModelGenotype {
+  string genotype_id = 1;
+  // id MGI:99917 or NCBIGene:20512 (TODO -- or both?)
+  // label Slc1a3
+  // A probably better alternative is the GeneDescriptor from the VRSATILE framework!
+  OntologyClass gene = 2;
+  // e.g., "Slc1a3<tm1.1(KOMP)Mbp> -/+",
+  string genotypedescription = 3;
+  // e.g. "-/+" -- does this really want to be a string??
+  string  genotypesymbol = 4;
+  // e.g., 18557 -- WHAT IS THIS
+    string jr = 5;
+  // e.g., : "2013-04-05",
+  // What is this doing together with the phenotype??
+    string latest_pheno = 6;
+    // What is this?
+  // e.g.,  "KOMP Complete"
+     string strainstatus = 7;
+
+}
+
+
+
+
+
+
