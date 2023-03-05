@@ -45,7 +45,8 @@
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to the Experimental Model Schema</a></li>
-<li class="toctree-l1"><a class="reference internal" href="emschema.html">Experimental Model Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="experimental_model.html">ExperimentalModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="experimental_cohort.html">Experimental Cohort</a></li>
 <li class="toctree-l1"><a class="reference internal" href="building-blocks.html">EMS building blocks</a></li>
 </ul>
 
@@ -75,12 +76,23 @@
              
   <section id="welcome-to-the-documentation-for-the-experimental-model-schema">
 <h1>Welcome to the documentation for the experimental-model-schema!<a class="headerlink" href="#welcome-to-the-documentation-for-the-experimental-model-schema" title="Permalink to this heading"></a></h1>
-<p>The goal of the experimental-model-schema (EMS)
-is to define a model for the description of genetic,
-genomic, experimental, and phenotypic information
-about an experiment with a model organism.
-//
-The schema as well as source code in Java, C++, and Python
+<p>The Experimental Model Schema (EMS) is a semantic framework for
+modeling the phenotypic data of model organism experimental data. The
+EMS comprises information about the experimental conditions, genetic modifications
+of the model, phenotypic observations and measurements. The EMS is
+designed to be compatible with the
+<a class="reference external" href="https://phenopacket-schema.readthedocs.io/en/latest/index.html">GA4GH Phenopacket Schema</a>.</p>
+<p>A goal of the EMS is to
+represent experimental outcomes across the entirety of the
+<a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/36330959/">Mouse Phenome Database</a> (MPD)
+and to represent both individuals or experimental cohorts. The EMS is designed
+to be flexible enough to represent experimental model data of other species.</p>
+<section id="nomenclature">
+<h2>Nomenclature<a class="headerlink" href="#nomenclature" title="Permalink to this heading"></a></h2>
+<p>We refer to the model as the <em>Experimental Model Schema</em>. We refer to
+each instance of the EMS used to describe an experiment as a
+<em>model packet</em> (lower case).</p>
+<p>The schema as well as source code in Java, C++, and Python
 is available from the <a class="reference external" href="https://github.com/TheJacksonLaboratory/ExperimentalModelSchema">experimental-model-schema GitHub repository</a>.</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
@@ -90,8 +102,10 @@ is available from the <a class="reference external" href="https://github.com/The
 <li class="toctree-l2"><a class="reference internal" href="protobuf.html">A short introduction to protobuf</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="emschema.html">Experimental Model Schema</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="emschema.html#nomenclature">Nomenclature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="experimental_model.html">ExperimentalModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="experimental_cohort.html">Experimental Cohort</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="experimental_cohort.html#explanations">Explanations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experimental_cohort.html#to-do">TO-DO</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="building-blocks.html">EMS building blocks</a><ul>
@@ -114,6 +128,7 @@ is available from the <a class="reference external" href="https://github.com/The
 </li>
 </ul>
 </div>
+</section>
 </section>
 
 
