@@ -18,6 +18,8 @@ building blocks.
 
    age
    animal
+   animal_identifier
+   animal_origin
    cohort_measurement
    experimental_cohort
    experimental_measurement

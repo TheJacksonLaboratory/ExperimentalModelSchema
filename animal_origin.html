@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Researcher &mdash; experimental-model-schema 0.0.1 documentation</title>
+  <title>Animal Origin &mdash; experimental-model-schema 0.0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -18,8 +18,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Strain" href="strain.html" />
-    <link rel="prev" title="Protocol" href="protocol.html" /> 
+    <link rel="next" title="CohortMeasurement" href="cohort_measurement.html" />
+    <link rel="prev" title="Animal Identifier" href="animal_identifier.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,7 +53,7 @@
 <li class="toctree-l2"><a class="reference internal" href="age.html#gestationalage">GestationalAge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="animal.html">Animal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="animal_identifier.html">Animal Identifier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="animal_origin.html">Animal Origin</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Animal Origin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cohort_measurement.html">CohortMeasurement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental_cohort.html">Experimental Cohort</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experimental_measurement.html">Experimental Measurement</a></li>
@@ -62,10 +62,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ontologyclass.html">OntologyClass</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project.html">Project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="protocol.html">Protocol</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Researcher</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#data-model">Data model</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="researcher.html">Researcher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="strain.html">Strain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="study.html">Study</a></li>
 </ul>
@@ -87,9 +84,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="building-blocks.html">EMS building blocks</a></li>
-      <li class="breadcrumb-item active">Researcher</li>
+      <li class="breadcrumb-item active">Animal Origin</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/researcher.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/animal_origin.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -97,111 +94,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="researcher">
-<span id="rstresearcher"></span><h1>Researcher<a class="headerlink" href="#researcher" title="Permalink to this heading"></a></h1>
-<p>Information about a researcher involved in a project (MPD records this information as lists of <strong>people</strong>).
-Uncertain if we want to include all of this information in the EMS</p>
-<dl>
-<dt>Here is an example</dt><dd><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&quot;people&quot;:[</span>
-<span class="go">    {&quot;address&quot;:&quot;Madison, WI, USA&quot;,</span>
-<span class="go">    &quot;affiliation&quot;:&quot;University of Wisconsin&quot;,</span>
-<span class="go">    &quot;comments&quot;:[],</span>
-<span class="go">    &quot;email&quot;:&quot;attie@biochem.wisc.edu&quot;,</span>
-<span class="go">    &quot;fax&quot;:&quot;&quot;,</span>
-<span class="go">    &quot;firstName&quot;:&quot;Alan&quot;,</span>
-<span class="go">    &quot;lastName&quot;:&quot;Attie&quot;,</span>
-<span class="go">    &quot;midInitials&quot;:&quot;D&quot;,</span>
-<span class="go">    &quot;phone&quot;:&quot;&quot;,</span>
-<span class="go">    &quot;roles&quot;:[{&quot;@id&quot;:&quot;#role/1&quot;,</span>
-<span class="go">        &quot;annotationValue&quot;:&quot;investigator&quot;,</span>
-<span class="go">    &quot;comments&quot;:[],</span>
-<span class="go">    &quot;termAccession&quot;:&quot;http://www.ebi.ac.uk/efo/EFO_0001739&quot;,&quot;termSource&quot;:&quot;EFO&quot;}]</span>
-<span class="go">    }, ...</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-<section id="data-model">
-<h2>Data model<a class="headerlink" href="#data-model" title="Permalink to this heading"></a></h2>
-<blockquote>
-<div><table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Definition of the <code class="docutils literal notranslate"><span class="pre">Researcher</span></code> element</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Field</p></th>
-<th class="head"><p>Type</p></th>
-<th class="head"><p>Multiplicity</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>id</p></td>
-<td><p>string</p></td>
-<td><p>1..1</p></td>
-<td><p>An arbitrary identifier for this researcher (??). REQUIRED</p></td>
-</tr>
-<tr class="row-odd"><td><p>firstName</p></td>
-<td><p>string</p></td>
-<td><p>1..1</p></td>
-<td><p>given name. REQUIRED</p></td>
-</tr>
-<tr class="row-even"><td><p>midInitials</p></td>
-<td><p>string</p></td>
-<td><p>0..1</p></td>
-<td><p>Zero, one, or multiple middle initials. RECOMMENDED</p></td>
-</tr>
-<tr class="row-odd"><td><p>lastName</p></td>
-<td><p>string</p></td>
-<td><p>1..1</p></td>
-<td><p>surname. REQUIRED</p></td>
-</tr>
-<tr class="row-even"><td><p>affiliation</p></td>
-<td><p>string</p></td>
-<td><p>0..1</p></td>
-<td><p>Should this be an object? What about people with multiple or changing affiliations, do we care?</p></td>
-</tr>
-<tr class="row-odd"><td><p>address</p></td>
-<td><p>string</p></td>
-<td><p>0..1</p></td>
-<td><p>Address of the affiliation</p></td>
-</tr>
-<tr class="row-even"><td><p>comments</p></td>
-<td><p>list of string</p></td>
-<td><p>0..1</p></td>
-<td><p>free text</p></td>
-</tr>
-<tr class="row-odd"><td><p>fax</p></td>
-<td><p>string</p></td>
-<td><p>0..1</p></td>
-<td><p>really?</p></td>
-</tr>
-<tr class="row-even"><td><p>email</p></td>
-<td><p>string</p></td>
-<td><p>0..1</p></td>
-<td><p>do we really want to store emails here?</p></td>
-</tr>
-<tr class="row-odd"><td><p>roles</p></td>
-<td><p>list of <a class="reference internal" href="ontologyclass.html#ontologyclass"><span class="std std-ref">OntologyClass</span></a></p></td>
-<td><p>0..*</p></td>
-<td><p>roles such as investigator from EFO</p></td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-</section>
+  <section id="animal-origin">
+<span id="rstanimal-origin"></span><h1>Animal Origin<a class="headerlink" href="#animal-origin" title="Permalink to this heading"></a></h1>
+<p>These elements specify the source of an animal (vendor).</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="protocol.html" class="btn btn-neutral float-left" title="Protocol" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="strain.html" class="btn btn-neutral float-right" title="Strain" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="animal_identifier.html" class="btn btn-neutral float-left" title="Animal Identifier" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cohort_measurement.html" class="btn btn-neutral float-right" title="CohortMeasurement" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
