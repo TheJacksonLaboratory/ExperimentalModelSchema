@@ -14,15 +14,23 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class StrainTest {
 
-    private final static String mgi_id = "MGI:2670463";
-    private final static String mgi_label = "C57BL/A";
-    private final static OntologyClass strainTerm = OntologyClass.newBuilder()
-            .setId(mgi_id).setLabel(mgi_label)
-            .build();
-    private final static Strain c57bl_a = Strain.newBuilder()
-            .setStrainType(strainTerm)
-            .addStrainAttribute(INBRED_STRAIN)
-            .build();
+    private final static  String mgi_id = "MGI:2670463";
+    private final static  String mgi_label = "C57BL/A";
+
+    private final static Strain c57bl_a = c57bl_a();
+
+    public static Strain c57bl_a() {
+
+         final  OntologyClass strainTerm = OntologyClass.newBuilder()
+                 .setLabel(mgi_label)
+                 .setId(mgi_id)
+                 .build();
+
+        return Strain.newBuilder()
+                .setStrainType(strainTerm)
+                .addStrainAttribute(INBRED_STRAIN)
+                .build();
+    }
 
 
     /*

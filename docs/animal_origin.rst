@@ -38,6 +38,7 @@ Example
 ^^^^^^^
 
 Here is a simple example to get discussions started...
+What about stock number?
 
 .. code-block:: console
 

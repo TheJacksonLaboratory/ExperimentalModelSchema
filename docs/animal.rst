@@ -22,76 +22,74 @@ Data model
       - Type
       - Multiplicity
       - Description
-    * - animal_id
+    * - id
       - string
       - 1..1
       - An arbitrary identifier. REQUIRED.
-    * - animal_project_id
-      - string
-      - 0..1
-      - An arbitrary identifier for the experimental project
-    * - project_symbol
-      - string
-      - 0..1
-      - An arbitrary symbol/acronym for the experimental project
+    * - animal_identification_method_list
+      - repeated AnimalIdentifier animal_identification_method_list
+      - 0..*
+      - Methods used to identify this mouse in the experiment
     * - sex
       - :ref:`rstsex`
       - 1..1
       - Sex of the model organism
-    * - stock_number
-      - :ref:`rstkaryotypicsex`
-      - 0..1
-      - WHAT IS THIS
     * - taxonomy
       - :ref:`rstontologyclass`
       - 1..1
       - an :ref:`rstontologyclass` representing the species (e.g., NCBITaxon:10090 for Mus musculus)
     * - strain
-      - string
+      - Strain
       - 0..1
-      - an string representing the strain TODO DO WE WANT TO MODEL THE STRAIN IN DETAIL?
-   * - strain_identifier
-      - string
+      - an :ref:`rststrain` representing the strain
+   *  - animalOrigin
+      - AnimalOrigin
       - 0..1
-      - a identifier representing the strain TODO DO WE ALSO NEED THIS HERE
+      - a  :ref:`rstanimal_origin`  representing the provence of the animal
+
+
+
 
 Example
 #######
 
-The following example represents a single male CC002/UncJ mouse that is being used for the JaxCC1 project.
-TODO -- Any other introduction needed here?
+The following example represents a single male C57BL/A mouse with an ear punch with the value "90".
 
-.. code-block:: yaml
-
-  animal:
-    animal_id: "F148-1-dob2015-01-09"
-    animal_project_id: "519"
-    project_symbol: "JaxCC1"
-    sex: "MALE"
-    stock_number: 42
-    taxonomy:
-        id: "NCBITaxon:10090"
-        label: "Mus musculus"
-    strain: "CC002/UncJ",
-    strain_identifier: 1502
-
-Alternatively in JSON,
 
 .. code-block:: json
 
     {
-      "animalId": "F148-1-dob2015-01-09",
-      "animalProjectId": "519",
-      "projectSymbol": "JaxCC1",
-      "sex": "MALE",
-      "stockNumber": 42,
-      "taxonomy": {
+    "animalIdentificationMethodList": [{
+        "id": "arbitrary.id",
+        "identifier": {
+            "id": "MGI:1234567",
+            "label": "ear punch"
+        },
+        "identifierValue": "90"
+    }],
+     "sex": "MALE",
+    "taxonomy": {
         "id": "NCBITaxon:10090",
         "label": "Mus musculus"
-      },
-      "strain": "CC002/UncJ",
-      "strainIdentifier": "1502"
+    },
+    "strain": {
+        "strainType": {
+            "id": "MGI:2670463",
+            "label": "C57BL/A"
+        },
+        "strainAttribute": ["INBRED_STRAIN"]
+    },
+    "animalOrigin": {
+        "vendor": "anonynmous_vendor",
+        "externalIdentifier": "arbitrary.external.id",
+        "originIdentifierList": [{
+            "idType": "jr_number",
+            "idValue": "424242"
+             }]
+        }
     }
+
+
 
 
 
