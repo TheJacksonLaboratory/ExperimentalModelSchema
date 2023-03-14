@@ -50,7 +50,6 @@
 <li class="toctree-l1 current"><a class="reference internal" href="building-blocks.html">EMS building blocks</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="age.html">Age</a></li>
 <li class="toctree-l2"><a class="reference internal" href="age.html#agerange">AgeRange</a></li>
-<li class="toctree-l2"><a class="reference internal" href="age.html#gestationalage">GestationalAge</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Animal</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#data-model">Data model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
@@ -121,34 +120,36 @@ for an experiment instead of an individual (See <a class="reference internal" hr
 </section>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
-<p>The following example represents a single male CC002/UncJ mouse that is being used for the JaxCC1 project.
-TODO – Any other introduction needed here?</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>animal:
-  animal_id: &quot;F148-1-dob2015-01-09&quot;
-  animal_project_id: &quot;519&quot;
-  project_symbol: &quot;JaxCC1&quot;
-  sex: &quot;MALE&quot;
-  stock_number: 42
-  taxonomy:
-      id: &quot;NCBITaxon:10090&quot;
-      label: &quot;Mus musculus&quot;
-  strain: &quot;CC002/UncJ&quot;,
-  strain_identifier: 1502
-</pre></div>
-</div>
-<p>Alternatively in JSON,</p>
+<p>The following example represents a single male C57BL/A mouse with an ear punch with the value “90”.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;animalId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;F148-1-dob2015-01-09&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;animalProjectId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;519&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;projectSymbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JaxCC1&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;sex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MALE&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;stockNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;taxonomy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="nt">&quot;animalIdentificationMethodList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arbitrary.id&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MGI:1234567&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ear punch&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;identifierValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;90&quot;</span>
+<span class="p">}],</span>
+<span class="w"> </span><span class="nt">&quot;sex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MALE&quot;</span><span class="p">,</span>
+<span class="nt">&quot;taxonomy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NCBITaxon:10090&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mus musculus&quot;</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;strain&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CC002/UncJ&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;strainIdentifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1502&quot;</span>
+<span class="p">},</span>
+<span class="nt">&quot;strain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;strainType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MGI:2670463&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C57BL/A&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;strainAttribute&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;INBRED_STRAIN&quot;</span><span class="p">]</span>
+<span class="p">},</span>
+<span class="nt">&quot;animalOrigin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;vendor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;anonynmous_vendor&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;externalIdentifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arbitrary.external.id&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;originIdentifierList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">&quot;idType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jr_number&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;idValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;424242&quot;</span>
+<span class="w">         </span><span class="p">}]</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>

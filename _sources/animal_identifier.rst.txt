@@ -17,7 +17,7 @@ Data model
    :header: Field, Type, Multiplicity, Description
 
     id, string, 0..1, arbitrary identifier. OPTIONAL (or should this be required?).
-    OntologyClass,identifier, 1..1, ontology term that describes the type of identifier, e.g. ear punch or tattoo. REQUIRED
+    OntologyClass,identifier, 1..1, ontology term that describes the type of identifier such as ear punch or tattoo. REQUIRED
     identifier_value, string, 1..1, the value of the identifier. REQUIRED
 
 The *AnimalIdentification* message is designed to be a component of the :ref:`rstanimal` message.

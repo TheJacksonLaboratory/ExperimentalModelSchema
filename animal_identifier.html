@@ -50,7 +50,6 @@
 <li class="toctree-l1 current"><a class="reference internal" href="building-blocks.html">EMS building blocks</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="age.html">Age</a></li>
 <li class="toctree-l2"><a class="reference internal" href="age.html#agerange">AgeRange</a></li>
-<li class="toctree-l2"><a class="reference internal" href="age.html#gestationalage">GestationalAge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="animal.html">Animal</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Animal Identifier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#data-model">Data model</a><ul>
@@ -114,7 +113,6 @@ TODO – better introduction.</p>
 <th class="head"><p>Type</p></th>
 <th class="head"><p>Multiplicity</p></th>
 <th class="head"><p>Description</p></th>
-<th class="head"></th>
 </tr>
 </thead>
 <tbody>
@@ -122,19 +120,16 @@ TODO – better introduction.</p>
 <td><p>string</p></td>
 <td><p>0..1</p></td>
 <td><p>arbitrary identifier. OPTIONAL (or should this be required?).</p></td>
-<td></td>
 </tr>
 <tr class="row-odd"><td><p>OntologyClass</p></td>
 <td><p>identifier</p></td>
 <td><p>1..1</p></td>
-<td><p>ontology term that describes the type of identifier</p></td>
-<td><p>e.g. ear punch or tattoo. REQUIRED</p></td>
+<td><p>ontology term that describes the type of identifier such as ear punch or tattoo. REQUIRED</p></td>
 </tr>
 <tr class="row-even"><td><p>identifier_value</p></td>
 <td><p>string</p></td>
 <td><p>1..1</p></td>
 <td><p>the value of the identifier. REQUIRED</p></td>
-<td></td>
 </tr>
 </tbody>
 </table>

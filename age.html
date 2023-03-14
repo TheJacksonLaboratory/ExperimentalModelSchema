@@ -57,10 +57,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#gestationalage">GestationalAge</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Data model</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="animal.html">Animal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="animal_identifier.html">Animal Identifier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="animal_origin.html">Animal Origin</a></li>
@@ -112,8 +108,8 @@ but this may not be what we want here. I am making the following suggestions</p>
 <section id="data-model">
 <h2>Data model<a class="headerlink" href="#data-model" title="Permalink to this heading"></a></h2>
 <blockquote>
-<div><table class="docutils align-default" id="id3">
-<caption><span class="caption-text">Definition  of the <code class="docutils literal notranslate"><span class="pre">Age</span></code> element</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<div><table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Definition  of the <code class="docutils literal notranslate"><span class="pre">Age</span></code> element</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 17%" />
 <col style="width: 17%" />
@@ -154,8 +150,8 @@ but this may not be what we want here. I am making the following suggestions</p>
 <section id="id1">
 <h2>Data model<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <blockquote>
-<div><table class="docutils align-default" id="id4">
-<caption><span class="caption-text">Definition of the <code class="docutils literal notranslate"><span class="pre">AgeRange</span></code> element</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
+<div><table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Definition of the <code class="docutils literal notranslate"><span class="pre">AgeRange</span></code> element</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
 <th class="head"><p>Type</p></th>
@@ -192,55 +188,6 @@ but this may not be what we want here. I am making the following suggestions</p>
 <span class="w">      </span><span class="nt">days</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="gestationalage">
-<h1>GestationalAge<a class="headerlink" href="#gestationalage" title="Permalink to this heading"></a></h1>
-<p>I have copied the following from the GA4GH Phenopacket. <strong>TODO</strong> – determine how to represent prenatal ages.</p>
-<p>Gestational age (or menstrual age) is the time elapsed between the first day of the last normal menstrual period and
-the day of delivery. The first day of the last menstrual period occurs approximately 2 weeks before ovulation and
-approximately 3 weeks before implantation of the blastocyst. Because most women know when their last period began but
-not when ovulation occurred, this definition traditionally has been used when estimating the expected date of delivery.
-In contrast, chronological age (or postnatal age) is the time elapsed after birth.</p>
-<p>Gestational age is conventionally expressed as completed weeks. Therefore, a 25-week, 5-day fetus is considered a
-25-week fetus. Gestational age is often reported as W+D. For instance, 33 weeks and 2 days could be reported as 33+2.</p>
-<section id="id2">
-<h2>Data model<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
-<table class="docutils align-default" id="id5">
-<caption><span class="caption-text">Definition  of the <code class="docutils literal notranslate"><span class="pre">GestationalAge</span></code> element</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Field</p></th>
-<th class="head"><p>Type</p></th>
-<th class="head"><p>Multiplicity</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>weeks</p></td>
-<td><p>int32</p></td>
-<td><p>1..1</p></td>
-<td><p>Completed weeks of gestation according to the above definition. REQUIRED.</p></td>
-</tr>
-<tr class="row-odd"><td><p>days</p></td>
-<td><p>int32</p></td>
-<td><p>0..1</p></td>
-<td><p>RECOMMENDED, If available</p></td>
-</tr>
-</tbody>
-</table>
-<p>The following shows how the element can be used to report the gestational age of 33 weeks and 2 days.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">gestationalAge</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">weeks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">33</span>
-<span class="w">    </span><span class="nt">days</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
-</pre></div>
-</div>
-<p>The gestational age element is intended for use in phenopackets that describe prenatal clinical data.</p>
 </section>
 </section>
 
