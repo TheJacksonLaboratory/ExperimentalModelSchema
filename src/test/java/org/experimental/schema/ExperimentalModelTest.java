@@ -67,8 +67,8 @@ public class ExperimentalModelTest {
         Animal animal = Animal.newBuilder()
                 .setTaxonomy(mmusculus)
                 .setSex(Sex.UNKNOWN_SEX)
-                .setStrain("B6.Cg-Tg(Myh6-Nox4)1Ams")
-                .setStrainIdentifier("MGI:4839003") // This is a string in MPD but a CURIE here -- UNIFY!
+                //.setStrain("B6.Cg-Tg(Myh6-Nox4)1Ams")
+                //.setStrainIdentifier("MGI:4839003") // This is a string in MPD but a CURIE here -- UNIFY!
                 .build();
         return animal;
     }

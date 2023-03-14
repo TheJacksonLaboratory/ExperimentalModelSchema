@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package org.jax.experimental.schema;
+import "experimental/schema/core/animal.proto";
 import "experimental/schema/core/base.proto";
 import "experimental/schema/core/phenotypic_feature.proto";
 

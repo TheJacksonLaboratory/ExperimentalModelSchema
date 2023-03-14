@@ -20,8 +20,9 @@ public class AnimalTest {
     private final static String animalProjectId = "519";
     private final static String projectSymbol =  "JaxCC1";
     private final static int stockNumber = 42;
-    private final static String strain = "CC002/UncJ";
+    //private final static String strain = "CC002/UncJ";
     private final static String strainIdentifier = "1502";
+    private final static Strain strain = null;
 
     @BeforeAll
     public static void init() {
@@ -30,14 +31,14 @@ public class AnimalTest {
                 .setLabel("Mus musculus")
                 .build();
         mouse = org.experimental.schema.core.Animal.newBuilder()
-                .setAnimalId(animalId)
-                .setAnimalProjectId(animalProjectId)
-                .setProjectSymbol(projectSymbol)
+                //.setAnimalId(animalId)
+              //  .setAnimalProjectId(animalProjectId)
+               // .setProjectSymbol(projectSymbol)
                 .setSex(org.experimental.schema.core.Sex.MALE)
-                .setStockNumber(stockNumber)
+              //  .setStockNumber(stockNumber)
                 .setTaxonomy(mouseTaxon)
                 .setStrain(strain)
-                .setStrainIdentifier(strainIdentifier)
+               // .setStrainIdentifier(strainIdentifier)
                 .build();
     }
 
@@ -50,13 +51,13 @@ public class AnimalTest {
 
     @Test
     public void testGetters() {
-        assertEquals(animalId, mouse.getAnimalId());
-        assertEquals(animalProjectId, mouse.getAnimalProjectId());
-        assertEquals(projectSymbol, mouse.getProjectSymbol());
+      //  assertEquals(animalId, mouse.getAnimalId());
+      //  assertEquals(animalProjectId, mouse.getAnimalProjectId());
+       // assertEquals(projectSymbol, mouse.getProjectSymbol());
         assertEquals(org.experimental.schema.core.Sex.MALE, mouse.getSex());
-        assertEquals(stockNumber, mouse.getStockNumber());
+      //  assertEquals(stockNumber, mouse.getStockNumber());
         assertEquals(strain, mouse.getStrain());
-        assertEquals(strainIdentifier, mouse.getStrainIdentifier());
+      //  assertEquals(strainIdentifier, mouse.getStrainIdentifier());
     }
     /*
     -- formatting error

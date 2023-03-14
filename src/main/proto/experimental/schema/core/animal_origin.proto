@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package org.experimental.schema.core;
+
+import "experimental/schema/core/base.proto";
+import "experimental/schema/core/strain.proto";
+option java_multiple_files = true;
+option java_package = "org.experimental.schema.core";
+
+
+
+
+
+// https://www.jax.org/jax-mice-and-services/customer-support/technical-support/breeding-and-husbandry-support/mouse-identification
+message AnimalOriginIdentifier {
+  // type of identifier that is application specific, e.g. jr number (JAX registry)
+  // also stock number, etc.
+  string id_type = 1;
+  // identifier of this Animal
+  string id_value = 2;
+}
+
+message AnimalOrigin {
+  // TODO get feedback as to how much information about the vendor needs to be stored?
+  string vendor = 1;
+  string external_identifier = 2;
+  repeated AnimalOriginIdentifier origin_identifier_list = 3;
+}
