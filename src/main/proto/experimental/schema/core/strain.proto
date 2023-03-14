@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package org.experimental.schema.core;
+
+import "experimental/schema/core/base.proto";
+
+option java_multiple_files = true;
+option java_package = "org.experimental.schema.core";
+
+
+
+enum StrainAttribute {
+    UNKNOWN = 0;
+    INBRED_STRAIN = 1;
+    CONGENIC = 2;
+    MUTANT_STRAIN = 3;
+    TRANSGENIC = 4;
+}
+
+
+
+message Strain {
+  // e.g., MGI:2670463,  C57BL/A
+  OntologyClass strain_type = 1;
+  repeated StrainAttribute strain_attribute = 2;
+  repeated string alternate_id_list = 3;
+}

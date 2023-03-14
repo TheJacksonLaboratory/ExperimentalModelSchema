@@ -3,7 +3,7 @@ syntax = "proto3";
 package org.experimental.schema.core;
 
 import "experimental/schema/core/base.proto";
-
+import "experimental/schema/core/strain.proto";
 option java_multiple_files = true;
 option java_package = "org.experimental.schema.core";
 
@@ -14,17 +14,11 @@ message Animal {
   string id = 1;
   // an application-specific identifier of the experimental project
   // not needed, the Animal is embedded in the project
-
   repeated AnimalIdentification animal_identificatin_method_list = 2;
-
- // string animal_project_id = 2;
-  // a symbol/acronym representing the project
-  //string project_symbol = 3;
   // The sex (UNKNOWN_SEX if not known or available)
   Sex sex = 4;
   // The species (and in some cases subspecies) of this Animal
   OntologyClass taxonomy = 5;
-
   // An object from an ontology/controlled terminology representing the strain
   Strain strain = 7;
   // An object representing where the mouse strain was purchased or derived
@@ -40,15 +34,7 @@ message AnimalIdentification {
 }
 
 
-message Strain {
-  // MGI:123 and label
-  OntologyClass strain_type = 1;
-  //string strain = 4;
-  //  // SHOULD THIS BE AN INT INSTEAD
-  //  string strain_identifier = 5;
-  repeated string alternate_id_list = 2;
 
-}
 
 // https://www.jax.org/jax-mice-and-services/customer-support/technical-support/breeding-and-husbandry-support/mouse-identification
 message AnimalOriginIdentifier {
