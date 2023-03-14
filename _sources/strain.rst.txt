@@ -4,41 +4,75 @@
 Strain
 ######
 
-We currently have the following MPD schema for information about a strain. The table is mixing information about the
-strain itself with information about its availability at JAX, which seems like it should live somewhere else? The
-strain nomenclature and related concepts are available in this
-`handbook <https://www.urmc.rochester.edu/MediaLibraries/URMCMedia/animal-resource/forms/documents/JAX-Handbook-Genetically-Standardized-Mice.pdf>`_,
-but this information is not currently easily available at the JAX webpage.
+A **strain** can be defined as a group of organisms that belong to the same species but share certain genetic
+characteristics not found in other members of the species (Source: `NCI <https://www.cancer.gov/publications/dictionaries/cancer-terms/def/organism-strain>`_).
 
-**TODO** decide what level of detail we want to model this with and how.
-Probably some sort of a strain ontology would be good so that all of the information about a strain lives externally
-to the experimental packets and we can just use an ontology term to refer to them.
+Mouse strain nomenclature provides two types of technical information: the background or
+parental strains upon which the strain is based, and details about relevant genes and alleles. The
+strain name can also include such information as who developed the strain, where it was
+developed, and where it is currently maintained (Details are available in the
+`JAX Handbook <https://www.urmc.rochester.edu/MediaLibraries/URMCMedia/animal-resource/forms/documents/JAX-Handbook-Genetically-Standardized-Mice.pdf>`_).
 
-**TODO** Are there data required to denote the particular version of a strain used for some experiment?
+The EPS represents strain information as follows.
+
+
+Data model
+##########
+
+.. csv-table::
+   :header: Field, Type, Multiplicity, Description
+
+    strain_type, OntologyClass, 1..1, ontology term representing the strain e.g., MP:0013414. REQUIRED.
+    strain_attribute,repeated StrainAttribute, 0..*, attributes of the strain. OPTIONAL
+    alternate_id_list,repeated string, 0..*, alternate string representations of the strain identified. OPTIONAL
+
+The *Strain* message is designed to work with an enumeration of strain attributes.
+
+.. csv-table::
+   :header: Entry, Explanation
+
+    UNKNOWN, no information available
+    INBRED_STRAIN, todo
+    CONGENIC, todo
+    MUTANT_STRAIN, todo
+    TRANSGENIC, todo
+    OUTBRED, todo
+    CRE_STRAIN, todo
+
+
+Examples
+^^^^^^^^
+
+The following represents the strain `"C57BL/A" <https://www.informatics.jax.org/strain/MGI:2670463>`_.
 
 .. code-block:: console
 
     {
-      "jaxinfo": [
-        {
-          "avl_status": "Repository Live",
-          "nomenclature": "CC002/UncJ",
-          "stocknum": "021236"
-        }
-      ],
-      "mpdinfo": [
-        {
-          "aname": "CC002/UncJ",
-          "id": 1502,
-          "jaxavl": "Repository Live",
-          "longname": "CC002/UncJ",
-          "mginum": "MGI:5649080",
-          "nproj": 9,
-          "nsnpproj": null,
-          "panelsym": "CC",
-          "stocknum": "021236",
-          "straintype": "RI",
-          "vendor": "J"
-        }
-      ]
+        "strainType": {
+            "id": "MGI:2670463",
+            "label": "C57BL/A"
+        },
+        "strainAttribute": ["INBRED_STRAIN"]
     }
+
+
+The following represents the strain `"B6.Cg-Tg(Myh6-Nox4)1Ams " <https://www.informatics.jax.org/strain/MGI:4839003>`_/
+
+.. code-block:: console
+
+    {
+        "strainType": {
+            "id": "MGI:4839003",
+            "label": "B6.Cg-Tg(Myh6-Nox4)1Ams"
+        },
+        "strainAttribute": ["CONGENIC", "MUTANT_STRAIN", "TRANSGENIC"]
+    }
+
+
+Explanations
+^^^^^^^^^^^^
+
+TODO -- explain how to choose each of the elements of this message (write this after we have finalized the element).
+Also consider how this would be done for other models.
+
+
