@@ -1,6 +1,8 @@
 package org.experimental.schema.core;
 
 
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.util.JsonFormat;
 import org.experimental.schema.core.OntologyClass;
 import org.junit.jupiter.api.Test;
 
@@ -81,5 +83,22 @@ public class StrainTest {
     }
 
 
+    @Test
+    public void testConvertToJson() throws InvalidProtocolBufferException {
+        String json = JsonFormat.printer().print(c57bl_a);
+        System.out.println(json);
+       // org.experimental.schema.core.Animal.Builder animalBuilder = org.experimental.schema.core.Animal.newBuilder();
+       // JsonFormat.parser().merge(json, animalBuilder);
+      //  org.experimental.schema.core.Animal fromJson = animalBuilder.build();
+        //Ta-da!
+        assertNotNull(json);
+        json = JsonFormat.printer().print(b6_tg);
+        System.out.println(json);
+        // org.experimental.schema.core.Animal.Builder animalBuilder = org.experimental.schema.core.Animal.newBuilder();
+        // JsonFormat.parser().merge(json, animalBuilder);
+        //  org.experimental.schema.core.Animal fromJson = animalBuilder.build();
+        //Ta-da!
+        assertNotNull(json);
+    }
 
 }
