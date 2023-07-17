@@ -46,8 +46,14 @@ cp ./target/generated-sources/protobuf/python/experimental/schema/core/* $TEMP_D
 replaceImports
 # Create tests module
 mkdir $TEMP_DIRECTORY_TESTS_MODULE
-cp ./src/test/python/* $TEMP_DIRECTORY_TESTS_MODULE # NO TESTS FOR EMS YET
+cp ./src/test/python/* $TEMP_DIRECTORY_TESTS_MODULE # NO TESTS FOR EMS YET. ADDED PSEUDO TEST.
 # Copy Packaging files
+# For convenience, automatically update version number.
+# Otherwise, the package will not be uploaded to testPyPi.
+# Remove the next three lines as soon as we have passed the testing phase.
+NEW_TEST_VERSION_NUMBER=$(grep version= setup.py | awk -F '=' '{print $2}' | awk -F ',' '{print $1}' | awk -F '.' '{print $3 + 1}')
+sed 's/0.0.[0-9]*/0.0.'${NEW_TEST_VERSION_NUMBER}'/g' setup.py > foo
+mv foo setup.py
 cp requirements.txt setup.py pom.xml LICENSE README.rst $TEMP_DIRECTORY
 
 # Create Python venv in virtual directory
@@ -66,12 +72,10 @@ python3 setup.py sdist bdist_wheel || { echo "Deployment FAILED. Building python
 
 # Deploy - Remove --repository testpypi flag for production.
 if [ $1 = "release-prod" ]; then
-  python3 -m twine upload dist/*
+  echo "Not set up yet."
+  #python3 -m twine upload dist/*
 elif [ $1 = "release-test" ]; then
   python3 -m twine upload --skip-existing --repository testpypi dist/*
 else
   echo "Python Release was prepared successfully. No release argument provided, use one of [release-prod, release-test] to make the production/test release."
 fi
-
-
-
