@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package org.jax.experimental.schema.v2;
+import "experimental/schema/core/base.proto";
+
+//import "experimental/schema/core/animal.proto";
+//import "experimental/schema/core/experimental_measurement.proto";
+//import "experimental/schema/core/model_genotype.proto";
+//import "experimental/schema/core/phenotypic_feature.proto";
+//import "experimental/schema/core/project.proto";
+
+option java_multiple_files = true;
+option java_package = "org.experimental.schema";
+
+
+
+
+// A description of genetic, genomic, experimental, and phenotypic information about an experiment with a model organism.
+//
+// This is a bundle of high-level concepts with no specifically defined relational concepts. It is expected that the
+// resources sharing the experimental_models will define and enforce their own semantics and level of requirements for included
+// fields.
+message ExperimentalModel {
+    // An identifier specific for this experimental model.
+    string id = 1;
+    // We may need a cohort here?
+    org.experimental.schema.core.Animal animal = 2;
+    // The experiment (study) in which the phenotype and measurements were observed
+    org.experimental.schema.core.Study study = 3;
+
+    // Phenotypic features relating to the subject of the phenopacket
+    repeated org.experimental.schema.core.PhenotypicFeature phenotypic_feature_list = 4;
+    // Quantitative measurements
+    repeated org.experimental.schema.core.ExperimentalMeasurement measurement_list = 5;
+
+    repeated org.experimental.schema.core.ModelGenotype genotype_list = 6;
+
+    // Quantifiable measurements related to the individual
+   // repeated phenopackets.schema.v2.core.Measurement measurements = 4;
+
+
+
+
+
+}

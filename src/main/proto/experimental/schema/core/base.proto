@@ -18,6 +18,8 @@ message OntologyClass {
   // class label, aka name. E.g. "Abnormality of cardiovascular system"
   string label = 2;
 }
+// TODO: PH - I would not write so many comments here. The code should be clear. Better to write stuff like that in the ReadTheDocs documentation.
+
 
 // FHIR mapping: Reference (https://www.hl7.org/fhir/references.html)
 message ExternalReference {
@@ -27,11 +29,14 @@ message ExternalReference {
   // A full or partial URL pointing to the external reference if no commonly resolvable identifier can be used in the
   // `id` field
   // FHIR mapping Reference.reference
+  // TODO: PH - If this is an URL, why don't we call it 'url' but 'reference'?
   string reference = 2;
   // Human readable title or display string for the reference
   // FHIR mapping: Reference.display
   string description = 3;
 }
+// TODO: PH - We could use this element in the new Individual/source element. Or even a list of such elements.
+// TODO: PH - Too many comments!
 
 // FHIR mapping: Condition.evidence (https://www.hl7.org/fhir/condition-definitions.html#Condition.evidence)
 message Evidence {
@@ -41,6 +46,7 @@ message Evidence {
   // FHIR mapping: Condition.evidence.detail
   ExternalReference reference = 2;
 }
+// TODO: PH - Too many comments!
 
 
 // A clinical procedure performed on a subject. By preference a single concept to indicate both the procedure and the
@@ -59,6 +65,8 @@ message Procedure {
 
     AgeElement age_performed = 3;
 }
+// TODO: PH - I would put this in the proto file for the new treatment element
+// TODO: PH - Too many comments!
 
 
 
@@ -68,11 +76,13 @@ message Age {
   int32 weeks = 2;
   int32 days = 3;
 }
+// TODO: PH - I would stick with the traditional iso8601duration string. It's simpler, human-readable, and you can use it to specify the age as accurately as you like.
 
 message AgeRange {
   Age start = 1;
   Age end = 2;
 }
+
 
 message AgeElement {
   oneof element {
@@ -82,6 +92,7 @@ message AgeElement {
    // TimeStamp timestamp = 3;
   }
 }
+// TODO: PH - What is that? What is that good for? Nothing is written about this in the documentation.
 
 message File {
   // URI for the file e.g. file://data/genomes/file1.vcf.gz or https://opensnp.org/data/60.23andme-exome-vcf.231?1341012444
