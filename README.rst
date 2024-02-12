@@ -1,7 +1,9 @@
 Experimental Model Schema
 =========================
 
-TODO -- update the readme and the links
+JAX mouse resources such as the Collaborative Cross and hundreds of other inbred and recombinant inbred mouse strains and their  experimentally obtained phenotypic data provide a valuable resource for exploring such precision stratifications in mouse models using semantic analyses of similarity of disease characteristics and mechanisms. However,  it is currently challenging to perform global semantic analyses across these resources because of the lack of a common data model and a central source for accessing all required data. The Experimental Model Schema (EMS) is an analogous computational model for mouse experimental and genetic/genomic data.
+
+The repository [pyemphetools](https://github.com/TheJacksonLaboratory/pyemphetools) provides Python scripts for working with the EMS to encode JAX [Mouse Phenome Database (MPD)](https://phenome.jax.org/downloads) data using the EMS.
 
 
 Documentation
@@ -19,7 +21,7 @@ Enter the following (in the docs folder) to create the latest version of the doc
 ```
 make html
 ```
-Open the documentation in your browser by navigating to  
+Open the documentation in your browser by navigating to
 ExperimentalModelSchema/docs/build/index.html (at the appropriate path).
 
 
