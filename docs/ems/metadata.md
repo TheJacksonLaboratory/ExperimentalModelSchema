@@ -5,44 +5,17 @@
 This element contains structured definitions of the resources and ontologies used within the phenopacket. It is considered to be a required element of a valid Phenopacket and application Q/C software should check this.
 
 ## Data model
-##########
 
-  .. list-table:: Definition of the ``MetaData`` element
-    :widths: 25 25 25 75
-    :header-rows: 1
 
-    * - Field
-      - Type
-      - Multiplicity
-      - Description
-    * - created
-      - A Timestamp
-      - 1..1
-      - Representation of the time when this object was created, e.g., 2019-04-01T15:10:17.808Z
-    * - created_by
-      - string
-      - 1..1
-      - Name of person who created the phenopacket
-    * - submitted_by
-      - string
-      - 0..1
-      - Name of person who submitted the phenopacket
-    * - resources
-      - list of :ref:`rstresource`
-      - 1..*
-      - Ontologies used to create the phenopacket
-    * - updates
-      - list of :ref:`rstupdate`
-      - 0..*
-      - List of updates to the phenopacket
-    * - phenopacket_schema_version
-      - string
-      - 1..1
-      - schema version of the current phenopacket
-    * - external_references
-      - List of :ref:`rstexternalreference`
-      - 0..*
-      - (See text)
+| Field | Type      | Multiplicity      |  Description                                                                          |
+|:------|:----------|:------------------|:--------------------------------------------------------------------------------------|
+|created |A Timestamp|1..1| Representation of the time when this object was created, e.g., 2019-04-01T15:10:17.808Z|
+|created_by| string| 1..1| Name of person who created the phenopacket|
+|submitted_by|string|0..1|Name of person who submitted the phenopacket|
+|resources|list of :ref:`rstresource`|1..*|Ontologies used to create the phenopacket|
+|updates|list of :ref:`rstupdate`|0..*|List of updates to the phenopacket|
+|phenopacket_schema_version|string| 1..1|schema version of the current phenopacket|
+|external_references|List of :ref:`rstexternalreference`| 0..*| (See text)|
 
 The `MetaData` element MUST have one :ref:`rstresource` element for each ontology or terminology whose
 terms are used in the Phenopacket. For instance, if a MONDO term is used to specify the disease and

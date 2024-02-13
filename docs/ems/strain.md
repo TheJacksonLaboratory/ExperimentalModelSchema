@@ -13,32 +13,30 @@ developed, and where it is currently maintained (Details are available in the
 The EPS represents strain information as follows.
 
 
-Data model
-##########
+## Data model
 
-.. csv-table::
-   :header: Field, Type, Multiplicity, Description
 
-    strain_type, OntologyClass, 1..1, ontology term representing the strain e.g., MP:0013414. REQUIRED.
-    strain_attribute,repeated StrainAttribute, 0..*, attributes of the strain. OPTIONAL
-    alternate_id_list,repeated string, 0..*, alternate string representations of the strain identified. OPTIONAL
+| Field | Type      | Multiplicity      |  Description                                                                          |
+|:------|:----------|:------------------|:--------------------------------------------------------------------------------------|
+|strain_type| OntologyClass| 1..1| ontology term representing the strain e.g., MP:0013414. REQUIRED.|
+|strain_attribute|repeated StrainAttribute| 0..*, attributes of the strain. OPTIONAL|
+|alternate_id_list|repeated string| 0..*| alternate string representations of the strain identified. OPTIONAL|
 
 The *Strain* message is designed to work with an enumeration of strain attributes.
 
-.. csv-table::
-   :header: Entry, Explanation
+| Entry |    Explanation             |
+|:------|:----------|
+|UNKNOWN| no information available|
+|INBRED_STRAIN| todo|
+|CONGENIC| todo|
+|MUTANT_STRAIN| todo|
+|TRANSGENIC| todo|
+|OUTBRED| todo|
+|CRE_STRAIN| todo|
 
-    UNKNOWN, no information available
-    INBRED_STRAIN, todo
-    CONGENIC, todo
-    MUTANT_STRAIN, todo
-    TRANSGENIC, todo
-    OUTBRED, todo
-    CRE_STRAIN, todo
 
+### Examples
 
-Examples
-^^^^^^^^
 
 The following represents the strain `"C57BL/A" <https://www.informatics.jax.org/strain/MGI:2670463>`_.
 
@@ -66,8 +64,8 @@ The following represents the strain `"B6.Cg-Tg(Myh6-Nox4)1Ams " <https://www.inf
     }
 
 
-Explanations
-^^^^^^^^^^^^
+### Explanations
+
 
 TODO -- explain how to choose each of the elements of this message (write this after we have finalized the element).
 Also consider how this would be done for other models.

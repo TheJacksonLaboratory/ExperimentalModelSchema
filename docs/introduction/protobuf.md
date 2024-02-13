@@ -1,8 +1,5 @@
-.. _rstprotobuf:
+# A short introduction to protobuf
 
-================================
-A short introduction to protobuf
-================================
 
 Phenopackets schema uses protobuf, an exchange format developed in 2008 by Google. We refer readers to the
 excellent `Wikipedia page on Protobuf <https://en.wikipedia.org/wiki/Protocol_Buffers>`_ and
@@ -19,9 +16,8 @@ The major advantages of protobuf are that it is language-neutral, faster than ma
 Protobuf forsees that data structures (so-called **messages**) are defined in a definition file (with the suffix .proto) and compiled to generate code that is invoked by the sender or recipient of the data to encode/decode the data.
 
 
-~~~~~~~~~~~~~~~~~~~
-Installing protobuf
-~~~~~~~~~~~~~~~~~~~
+### Installing protobuf
+
 
 The following exercise is not necessary to use phenopacket-schema,
 but is intended to build intuition for how protobuf works.
@@ -86,9 +82,8 @@ This will generate a Java file called ``Dog.java`` with code to create, import, 
 
 It is highly recommended to peruse the complete Java file, but we will leave that as an exercise for the reader.
 
-~~~~~~~~~~~~~~~~~~~~~~~~
-Using the generated code
-~~~~~~~~~~~~~~~~~~~~~~~~
+### Using the generated code
+
 
 We can now easily use a generated code to create Java instance of the Dog class. We will not provide a complete maven tutorial here, but the
 key things that need to be done to get this to work are the following.
@@ -170,8 +165,8 @@ If we run the demo app, it should output the following. ::
     Fido; weight: 5kg;  favorite toys: bone; ball``.
 
 
-Serialization
-=============
+### Serialization
+
 
 The following code snippet serializes the Java object fido and writes the serialized message to disk, then reads the message and displays it.
 

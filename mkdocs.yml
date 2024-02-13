@@ -36,15 +36,26 @@ nav:
   - Developers:
     - Overview: "developers/developers.md"
     - Documentation: "developers/documentation.md"
-  - Building blocks: "building-blocks.md"
+  - Introduction:
+    - Overview: "introduction.md"
+    - Ontologies: "introduction/ontologies.md"
+    - Protobuf: "protobuf.md"
   - EMS:
+    - Building blocks: "building-blocks.md"
     - Age: "ems/age.md"
     - Animal: "ems/animal.md"
     - Animal identifier: "ems/animal_identifier.md"
     - Animal origin: "ems/animal_origin.md"
     - Cohort measuerment: "ems/cohort_measurement.md"
     - Experimental cohort: "ems/experimental_cohort.rst"
+    - MetaData: "ems/metadata.md"
+    - Model genotype: "ems/model_genotype.md"
     - OntologyClass: "ems/ontologyclass.md"
+    - Project: "ems/project.md"
+    - Protocol: "ems/protocol.md"
+    - Researcher: "ems/researcher.md"
+    - Strain: "ems/strain.md"
+    - Study: "ems/study.md"
 
 
 

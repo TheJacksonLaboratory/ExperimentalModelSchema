@@ -26,57 +26,21 @@ Here is an example
         }, ...
 
 
-Data model
-##########
+## Data model
 
- .. list-table:: Definition of the ``Researcher`` element
-    :widths: 25 25 25 75
-    :header-rows: 1
 
-    * - Field
-      - Type
-      - Multiplicity
-      - Description
-    * - id
-      - string
-      - 1..1
-      - An arbitrary identifier for this researcher (??). REQUIRED
-    * - firstName
-      - string
-      - 1..1
-      - given name. REQUIRED
-    * - midInitials
-      - string
-      - 0..1
-      - Zero, one, or multiple middle initials. RECOMMENDED
-    * - lastName
-      - string
-      - 1..1
-      - surname. REQUIRED
-    * - affiliation
-      - string
-      - 0..1
-      - Should this be an object? What about people with multiple or changing affiliations, do we care?
-    * - address
-      - string
-      - 0..1
-      - Address of the affiliation
-    * - comments
-      - list of string
-      - 0..1
-      - free text
-    * - fax
-      - string
-      - 0..1
-      - really?
-    * - email
-      - string
-      - 0..1
-      - do we really want to store emails here?
-    * - roles
-      - list of :ref:`ontologyclass`
-      - 0..*
-      - roles such as investigator from EFO
+| Field | Type      | Multiplicity      |  Description                                                                          |
+|:------|:----------|:------------------|:--------------------------------------------------------------------------------------|
+|id| string| 1..1|An arbitrary identifier for this researcher (??). REQUIRED|
+|firstName| string| 1..1|given name. REQUIRED|
+|midInitials|string|0..1|Zero, one, or multiple middle initials. RECOMMENDED|
+|lastName|string| 1..1|surname. REQUIRED|
+|affiliation|string| 0..1|Should this be an object? What about people with multiple or changing affiliations, do we care?|
+|address|string| 0..1| Address of the affiliation|
+|comments| string| 0..1| free text
+|fax|string|0..1|really?|
+|email|string|0..1|do we really want to store emails here?|
+|roles|list of [OntologyClass](ems/ontologyclass.md)| 0..*|roles such as investigator from EFO|
 
 
 
