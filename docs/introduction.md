@@ -1,8 +1,5 @@
-.. _rstintroduction:
+# Introduction to the Experimental Model Schema
 
-#############################################
-Introduction to the Experimental Model Schema
-#############################################
 
 Model organisms offer the opportunity to perform system-level investigations
 of the effects of genetic variants, environmental exposures, or candidate

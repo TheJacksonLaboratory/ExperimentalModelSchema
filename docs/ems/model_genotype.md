@@ -1,8 +1,5 @@
-.. _rstmodel_genotype:
+# ModelGenotype
 
-#############
-ModelGenotype
-#############
 
 For human data, we are using the `GA4GH Variation Representation Specification (VRS) <https://phenopacket-schema.readthedocs.io/en/latest/variant.html>`_.
 However, mouse data often use symbolic representations of variants that are not immediately computable, for instance.

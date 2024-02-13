@@ -1,8 +1,5 @@
-.. _rstcohortmeasurement:
+# CohortMeasurement
 
-#################
-CohortMeasurement
-#################
 
 Some of our data is available as the aggregate measurements for a group of experimental animals.
 An example is shown below. The implicit assumption is that the measurements are normally distributed **TODO** decide if

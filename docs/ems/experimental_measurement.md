@@ -1,8 +1,5 @@
-.. _rstexperimental_measurement:
+# Experimental Measurement
 
-########################
-Experimental Measurement
-########################
 
 The subject of the Experimental Model Schema is represented by an *Individual* element.
 This element intends to represent an individual model organism used in an experiment.
@@ -12,8 +9,8 @@ for an experiment instead of an individual (See :ref:`rstexperimentalcohort`).
 Probably we want to model this on the ro-crate JSON-LD model, therefore I am not trying to fill out details here
 
 
-Suggestion
-##########
+## Suggestion
+
 
 The data that is current in MPD looks like this
 
@@ -120,33 +117,17 @@ In bioconnect, I am seeing things like this -- JAXAS000001
 longitudinal mass measurement assay, but it is unclear where to get info about *JAXAS000001* -- is this intended to
 be a controlled terminology or ontology?
 
-Data model
-##########
-
- .. list-table:: Definition of the ``ExperimentalMeasurement`` element
-    :widths: 25 25 25 75
-    :header-rows: 1
-
-    * - Field
-      - Type
-      - Multiplicity
-      - Description
-    * - id
-      - string
-      - 1..1
-      - An arbitrary identifier for this specific measurement. REQUIRED
-    * - assay
-      - :ref:`rstontologyclass`
-      - 1..1
-      - The experiment performed to obtain the measurement
-    * - age
-      - AgeElement
-      - 0..1
-      - The age at which the experiment was performend. RECOMMENDED
+## Data model
 
 
-Example
-#######
+| Field | Type | Multiplicity |  Description |
+|id | string |1..1|An arbitrary identifier for this specific measurement. REQUIRED|
+|assay | [OntologyClass](ems/ontologyclass.md) | 1..1 |The experiment performed to obtain the measurement|
+|age |AgeElement| 0..1|The age at which the experiment was performend. RECOMMENDED|
+
+
+## Example
+
 
 The following example is typical but does not make use of all of the optional fields of this element.
 
@@ -156,6 +137,7 @@ The following example is typical but does not make use of all of the optional fi
     id: "todo"
 
 
-Explanations
-############
+## Explanations
+
+zodo
 
