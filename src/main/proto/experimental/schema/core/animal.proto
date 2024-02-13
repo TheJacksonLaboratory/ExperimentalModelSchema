@@ -2,29 +2,30 @@ syntax = "proto3";
 
 package org.experimental.schema.core;
 
+import "experimental/schema/core/animal_identifier.proto";
+import "experimental/schema/core/animal_origin.proto";
 import "experimental/schema/core/base.proto";
-
+import "experimental/schema/core/strain.proto";
 option java_multiple_files = true;
 option java_package = "org.experimental.schema.core";
 
-// An individual (or subject) typically corresponds to an individual human or another organism.
-// FHIR mapping: Patient (https://www.hl7.org/fhir/patient.html).
+// An individual animal used in an experiment.
+// information about the project goes in the Project message
 message Animal {
   // an application-specific identifier such as "F148-1-dob2015-01-09"
-  string animal_id = 1;
+  string id = 1;
   // an application-specific identifier of the experimental project
-  string animal_project_id = 2;
-  // a synbol/acronym representing the project
-  string project_symbol = 3;
-
+  // not needed, the Animal is embedded in the project
+  repeated AnimalIdentifier animal_identification_method_list = 2;
+  // The sex (UNKNOWN_SEX if not known or available)
   Sex sex = 4;
-  // WHAT IS THIS FOR AND DOES IT BELONG IN THE SCHEMA?
-  int32 stock_number = 5;
-  OntologyClass taxonomy = 6;
-  // A String representing the strain, e.g., "CC002/UncJ"
-  string strain = 7;
-  // SHOULD THIS BE AN INT INSTEAD
-  string strain_identifier = 8;
+  // The species (and in some cases subspecies) of this Animal
+  OntologyClass taxonomy = 5;
+  // An object from an ontology/controlled terminology representing the strain
+  Strain strain = 7;
+  // An object representing where the mouse strain was purchased or derived
+  AnimalOrigin animalOrigin = 8;
 }
+
 
 

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package org.experimental.schema.core;
+
+import "experimental/schema/core/base.proto";
+import "experimental/schema/core/meta_data.proto";
+
+
+option java_multiple_files = true;
+option java_package = "org.experimental.schema.core";
+
+
+message Institution {
+  string name = 1;
+  string city = 2;
+  string state_or_province = 3;
+  string country = 4;
+}
+
+
+message Researcher {
+  string first_name = 1;
+  string middle_initials = 2;
+  string last_name = 3;
+  repeated Institution affiliation = 4;
+  repeated string email = 5;
+  repeated string comments = 6;
+  // e.g., EFO_0001739, researcher
+  // for --   "termAccession":"http://www.ebi.ac.uk/efo/EFO_0001739","termSource":"EFO"}]
+  repeated OntologyClass role_list = 7;
+}

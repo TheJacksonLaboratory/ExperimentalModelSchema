@@ -9,8 +9,7 @@ import "experimental/schema/core/meta_data.proto";
 option java_multiple_files = true;
 option java_package = "org.experimental.schema.core";
 
-// TODO -- discuss how to represent the result of the measurement
-// for now closely modelled on GA4GH Phenopacket Measurement message
+
 message Project {
   // An arbitrary identifier for this project
   string id = 1;
@@ -18,7 +17,7 @@ message Project {
   repeated string people = 2;
   // Date on which data about this project was released to the public.
   // Todo -- how do we want to represent dates?
-  string public_release_dat3 = 3;
+  string public_release_date = 3;
   // Publications that describe this project.
   // ToDo -- how do we want to represent publications and do they belong here?
   repeated string publications = 4;

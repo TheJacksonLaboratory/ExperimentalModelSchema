@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package org.experimental.schema.core;
+
+
+import "experimental/schema/core/base.proto";
+
+option java_multiple_files = true;
+option java_package = "org.experimental.schema.core";
+
+
+
+message AnimalIdentifier {
+  string id = 1;
+  // identifier for the type of identifier, e.g. ear punch or tattoo
+  OntologyClass identifier = 2;
+  string identifier_value = 3;
+}

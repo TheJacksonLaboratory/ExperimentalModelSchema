@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package org.experimental.schema.v2.core;
+
+option java_multiple_files = true;
+option java_package = "org.experimental.schema.v2.core";
+
+
+// A class (aka term, concept) in an ontology
+message OntologyClass {
+
+  // A CURIE-style identifier e.g. HP:0100024, MP:0001284, UBERON:0001690
+  string id = 1; // REQUIRED!
+
+  // Class label, aka name. E.g. "Abnormality of cardiovascular system"
+  string label = 2;
+}
+
