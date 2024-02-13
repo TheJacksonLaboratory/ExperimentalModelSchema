@@ -4,7 +4,7 @@
 These elements specify the source of an animal (vendor).
 
 
-The *AnimalOrigin* message is designed to be a component of the :ref:`rstanimal` message.
+The *AnimalOrigin* message is designed to be a component of the [animal](animal.md) message.
 
 ## Data model
 
@@ -16,6 +16,7 @@ TODO -- this is extremely prelimiary and only intended to start discussions!
 
 
 | Field | Type | Multiplicity |  Description |
+|:------|:-----------|:----------------|:------|
 | id_type |  string|  1..1|  arbitrary identifier. REQUIRED |
 | id_value|  string|  1..1|  the value of the identifier. REQUIRED|
 
@@ -33,14 +34,13 @@ The AnimalOrigin message has a list of AnimalOriginIdentifiers and also specifie
 Here is a simple example to get discussions started...
 What about stock number?
 
-.. code-block:: console
-
-    {
-      "vendor": "anonynmous_vendor",
-      "externalIdentifier": "arbitrary.external.id",
-      "originIdentifierList": [{
-        "idType": "jr_number",
-        "idValue": "424242"
-      }]
-    }
-
+``` json
+{
+  "vendor": "anonynmous_vendor",
+  "externalIdentifier": "arbitrary.external.id",
+  "originIdentifierList": [{
+    "idType": "jr_number",
+    "idValue": "424242"
+  }]
+}
+```

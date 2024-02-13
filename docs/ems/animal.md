@@ -13,11 +13,11 @@ for an experiment instead of an individual (See :ref:`rstexperimentalcohort`).
 
 
 | Field | Type | Multiplicity |  Description |
-|:------:-----------|:----------------|:------|
+|:------|:-----------|:----------------|:------|
 | id | string | 1..1 |  An arbitrary identifier. REQUIRED. |
 | animal_identification_method_list |repeated AnimalIdentifier animal_identification_method_list  |0..* | Methods used to identify this mouse in the experiment  |
 | sex | Sex | 1..1 |  Sex of the model organism |
-| taxonomy | [OntologyClass](ems/ontologyclass.md) | 1..1 | an :ref:`rstontologyclass` representing the species (e.g., NCBITaxon:10090 for Mus musculus)|
+| taxonomy | [OntologyClass](ontologyclass.md) | 1..1 | an :ref:`rstontologyclass` representing the species (e.g., NCBITaxon:10090 for Mus musculus)|
 | strain | Strain | 0..1 |  an :ref:`rststrain` representing the strain|
 | animalOrigin | AnimalOrigin | 0..1 | a  :ref:`rstanimal_origin`  representing the provence of the animal|
 
@@ -32,39 +32,38 @@ for an experiment instead of an individual (See :ref:`rstexperimentalcohort`).
 The following example represents a single male C57BL/A mouse with an ear punch with the value "90".
 
 
-.. code-block:: json
-
-    {
-    "animalIdentificationMethodList": [{
-        "id": "arbitrary.id",
-        "identifier": {
-            "id": "MGI:1234567",
-            "label": "ear punch"
-        },
-        "identifierValue": "90"
-    }],
-     "sex": "MALE",
-    "taxonomy": {
-        "id": "NCBITaxon:10090",
-        "label": "Mus musculus"
+``` json
+{
+"animalIdentificationMethodList": [{
+    "id": "arbitrary.id",
+    "identifier": {
+        "id": "MGI:1234567",
+        "label": "ear punch"
     },
-    "strain": {
-        "strainType": {
-            "id": "MGI:2670463",
-            "label": "C57BL/A"
-        },
-        "strainAttribute": ["INBRED_STRAIN"]
+    "identifierValue": "90"
+}],
+    "sex": "MALE",
+"taxonomy": {
+    "id": "NCBITaxon:10090",
+    "label": "Mus musculus"
+},
+"strain": {
+    "strainType": {
+        "id": "MGI:2670463",
+        "label": "C57BL/A"
     },
-    "animalOrigin": {
-        "vendor": "anonynmous_vendor",
-        "externalIdentifier": "arbitrary.external.id",
-        "originIdentifierList": [{
-            "idType": "jr_number",
-            "idValue": "424242"
-             }]
-        }
+    "strainAttribute": ["INBRED_STRAIN"]
+},
+"animalOrigin": {
+    "vendor": "anonynmous_vendor",
+    "externalIdentifier": "arbitrary.external.id",
+    "originIdentifierList": [{
+        "idType": "jr_number",
+        "idValue": "424242"
+            }]
     }
-
+}
+```
 
 
 
@@ -100,7 +99,7 @@ WHAT IS THIS FOR AND DOES IT BELONG IN THE SCHEMA?
 
 
 The taxonomy identifier of the species of the the animal MUST be provided at its most specific level. We advise using the
-codes from the `NCBI Taxonomy <https://www.ncbi.nlm.nih.gov/taxonomy>`_ resource. For instance,
+codes from the [NCBI Taxonomy](https://www.ncbi.nlm.nih.gov/taxonomy){:target="_blank"} resource. For instance,
 NCBITaxon:10090 is mouse (Mus musculus) and  or NCBITaxon:9615 is dog.
 
 

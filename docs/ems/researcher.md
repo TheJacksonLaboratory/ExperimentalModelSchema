@@ -7,24 +7,24 @@ Uncertain if we want to include all of this information in the EMS
 
 
 Here is an example
- .. code-block:: console
-
-    "people":[
-        {"address":"Madison, WI, USA",
-        "affiliation":"University of Wisconsin",
-        "comments":[],
-        "email":"attie@biochem.wisc.edu",
-        "fax":"",
-        "firstName":"Alan",
-        "lastName":"Attie",
-        "midInitials":"D",
-        "phone":"",
-        "roles":[{"@id":"#role/1",
-            "annotationValue":"investigator",
-        "comments":[],
-        "termAccession":"http://www.ebi.ac.uk/efo/EFO_0001739","termSource":"EFO"}]
-        }, ...
-
+``` json
+"people":[
+    {"address":"Madison, WI, USA",
+    "affiliation":"University of Wisconsin",
+    "comments":[],
+    "email":"attie@biochem.wisc.edu",
+    "fax":"",
+    "firstName":"Alan",
+    "lastName":"Attie",
+    "midInitials":"D",
+    "phone":"",
+    "roles":[{"@id":"#role/1",
+        "annotationValue":"investigator",
+    "comments":[],
+    "termAccession":"http://www.ebi.ac.uk/efo/EFO_0001739","termSource":"EFO"}]
+    }, ...
+]
+```
 
 ## Data model
 
@@ -40,7 +40,7 @@ Here is an example
 |comments| string| 0..1| free text
 |fax|string|0..1|really?|
 |email|string|0..1|do we really want to store emails here?|
-|roles|list of [OntologyClass](ems/ontologyclass.md)| 0..*|roles such as investigator from EFO|
+|roles|list of [OntologyClass](ontologyclass.md)| 0..*|roles such as investigator from EFO|
 
 
 

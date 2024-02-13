@@ -2,13 +2,13 @@
 
 
 A **strain** can be defined as a group of organisms that belong to the same species but share certain genetic
-characteristics not found in other members of the species (Source: `NCI <https://www.cancer.gov/publications/dictionaries/cancer-terms/def/organism-strain>`_).
+characteristics not found in other members of the species (Source: [NCI](https://www.cancer.gov/publications/dictionaries/cancer-terms/def/organism-strain){:target="_blank"}).
 
 Mouse strain nomenclature provides two types of technical information: the background or
 parental strains upon which the strain is based, and details about relevant genes and alleles. The
 strain name can also include such information as who developed the strain, where it was
 developed, and where it is currently maintained (Details are available in the
-`JAX Handbook <https://www.urmc.rochester.edu/MediaLibraries/URMCMedia/animal-resource/forms/documents/JAX-Handbook-Genetically-Standardized-Mice.pdf>`_).
+[JAX Handbook](https://www.urmc.rochester.edu/MediaLibraries/URMCMedia/animal-resource/forms/documents/JAX-Handbook-Genetically-Standardized-Mice.pdf){:target="_blank"}).
 
 The EPS represents strain information as follows.
 
@@ -38,30 +38,29 @@ The *Strain* message is designed to work with an enumeration of strain attribute
 ### Examples
 
 
-The following represents the strain `"C57BL/A" <https://www.informatics.jax.org/strain/MGI:2670463>`_.
+The following represents the strain [C57BL/A](https://www.informatics.jax.org/strain/MGI:2670463){:target="_blank"}.
 
-.. code-block:: console
+``` json
+{
+    "strainType": {
+        "id": "MGI:2670463",
+        "label": "C57BL/A"
+    },
+    "strainAttribute": ["INBRED_STRAIN"]
+}
+```
 
-    {
-        "strainType": {
-            "id": "MGI:2670463",
-            "label": "C57BL/A"
-        },
-        "strainAttribute": ["INBRED_STRAIN"]
-    }
+The following represents the strain [B6.Cg-Tg(Myh6-Nox4)1Ams](https://www.informatics.jax.org/strain/MGI:4839003){:target="_blank"}.
 
-
-The following represents the strain `"B6.Cg-Tg(Myh6-Nox4)1Ams " <https://www.informatics.jax.org/strain/MGI:4839003>`_/
-
-.. code-block:: console
-
-    {
-        "strainType": {
-            "id": "MGI:4839003",
-            "label": "B6.Cg-Tg(Myh6-Nox4)1Ams"
-        },
-        "strainAttribute": ["CONGENIC", "MUTANT_STRAIN", "TRANSGENIC"]
-    }
+```  json
+{
+    "strainType": {
+        "id": "MGI:4839003",
+        "label": "B6.Cg-Tg(Myh6-Nox4)1Ams"
+    },
+    "strainAttribute": ["CONGENIC", "MUTANT_STRAIN", "TRANSGENIC"]
+}
+```
 
 
 ### Explanations
