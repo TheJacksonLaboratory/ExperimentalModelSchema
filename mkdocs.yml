@@ -1,0 +1,64 @@
+site_name: EMS
+
+theme:
+  name: "material"
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - content.code.select
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: indigo
+      accent: white
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: teal
+      accent: lime
+
+
+
+
+nav:
+  - Home: index.md
+  - Developers:
+    - Overview: "developers/developers.md"
+    - Documentation: "developers/documentation.md"
+  - Building blocks: "building-blocks.md"
+  - EMS:
+    - Age: "ems/age.md"
+    - Animal: "ems/animal.md"
+    - Animal identifier: "ems/animal_identifier.md"
+    - Animal origin: "ems/animal_origin.md"
+    - Cohort measuerment: "ems/cohort_measurement.md"
+    - Experimental cohort: "ems/experimental_cohort.rst"
+    - OntologyClass: "ems/ontologyclass.md"
+
+
+
+
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - md_in_html
+  - tables
+
+copyright: |
+  &copy; 2023 <a href="https://github.com/pnrobinson"  target="_blank" rel="noopener">Peter N Robinson</a>
