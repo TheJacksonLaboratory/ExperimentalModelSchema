@@ -1,8 +1,6 @@
-.. _rstanimal:
+# Animal
 
-######
-Animal
-######
+
 
 Individual experimental animals are represented by the *Animal* element of the Experimental Model Schema.
 This element intends to represent an individual model organism used in an experiment.
@@ -11,47 +9,25 @@ for an experiment instead of an individual (See :ref:`rstexperimentalcohort`).
 
 
 
-Data model
-##########
+## Data model
 
- .. list-table::
-    :widths: 25 25 25 75
-    :header-rows: 1
 
-    * - Field
-      - Type
-      - Multiplicity
-      - Description
-    * - id
-      - string
-      - 1..1
-      - An arbitrary identifier. REQUIRED.
-    * - animal_identification_method_list
-      - repeated AnimalIdentifier animal_identification_method_list
-      - 0..*
-      - Methods used to identify this mouse in the experiment
-    * - sex
-      - :ref:`rstsex`
-      - 1..1
-      - Sex of the model organism
-    * - taxonomy
-      - :ref:`rstontologyclass`
-      - 1..1
-      - an :ref:`rstontologyclass` representing the species (e.g., NCBITaxon:10090 for Mus musculus)
-    * - strain
-      - Strain
-      - 0..1
-      - an :ref:`rststrain` representing the strain
-   *  - animalOrigin
-      - AnimalOrigin
-      - 0..1
-      - a  :ref:`rstanimal_origin`  representing the provence of the animal
+| Field | Type | Multiplicity |  Description |
+|:------:-----------|:----------------|:------|
+| id | string | 1..1 |  An arbitrary identifier. REQUIRED. |
+| animal_identification_method_list |repeated AnimalIdentifier animal_identification_method_list  |0..* | Methods used to identify this mouse in the experiment  |
+| sex | Sex | 1..1 |  Sex of the model organism |
+| taxonomy | [OntologyClass](ems/ontologyclass.md) | 1..1 | an :ref:`rstontologyclass` representing the species (e.g., NCBITaxon:10090 for Mus musculus)|
+| strain | Strain | 0..1 |  an :ref:`rststrain` representing the strain|
+| animalOrigin | AnimalOrigin | 0..1 | a  :ref:`rstanimal_origin`  representing the provence of the animal|
 
 
 
 
-Example
-#######
+
+
+## Example
+
 
 The following example represents a single male C57BL/A mouse with an ear punch with the value "90".
 
@@ -93,46 +69,47 @@ The following example represents a single male C57BL/A mouse with an ear punch w
 
 
 
-Explanations
-############
+## Explanations
 
 
-animal_id
-^^^^^^^^^
+
+- animal_id
+
 This element is the **primary** identifier for the individual animal and MUST be used in other parts of a message when
 referring to this individual. There are no further constraints on the identifier, which is application-specific.
 
-animal_project_id
-^^^^^^^^^^^^^^^^^
+- animal_project_id
+
 TODO -- DOES THIS REFER TO THE EXPERIMENT -- PROVIDE DEFINITION HERE
 
 
-project_symbol
-^^^^^^^^^^^^^^
+- project_symbol
+
 TODO -- WHY IS THIS NEEDED IN ADDITION TO THE animal_project_id?
 
-sex
-^^^
+- sex
+
 An enumeration to denote the phenotypic sex of the individual animal. See :ref:`rstsex`.
 
-stock_number
-^^^^^^^^^^^^
+- stock_number
+
 WHAT IS THIS FOR AND DOES IT BELONG IN THE SCHEMA?
 
 
-taxonomy
-~~~~~~~~
+- taxonomy
+
+
 The taxonomy identifier of the species of the the animal MUST be provided at its most specific level. We advise using the
 codes from the `NCBI Taxonomy <https://www.ncbi.nlm.nih.gov/taxonomy>`_ resource. For instance,
 NCBITaxon:10090 is mouse (Mus musculus) and  or NCBITaxon:9615 is dog.
 
 
-strain
-^^^^^^
+- strain
+
 TODO -- Decide how to represent this
 
-strain_identifier
-^^^^^^^^^^^^^^^^^
+- strain_identifier
+
 TODO -- Decide how to represent this
 
 

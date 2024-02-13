@@ -1,8 +1,5 @@
-.. _rststudy:
+# Study
 
-#####
-Study
-#####
 
 
 - Describe the factors of interest in an experiment, using ontology terms, e.f., Diet, Strain, Sex

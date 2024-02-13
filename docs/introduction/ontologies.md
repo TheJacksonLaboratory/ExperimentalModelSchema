@@ -1,9 +1,5 @@
+# Ontologies
 
-.. _rstontologies:
-
-##########
-Ontologies
-##########
 
 
 TODO -- add texts to describe ontologies for model organisms.
@@ -28,9 +24,9 @@ Due to its extensive phenotypic coverage beyond other terminologies, HPO has rec
 into the `Unified Medical Language System <https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/HPO/>`_ (UMLS) to support deep phenotyping in a variety of mainstream health care IT systems.
 
 The `National Cancer institute's Thesaurus (NCIt) <http://www.obofoundry.org/ontology/ncit.html>`_ is used for
-cancer biosamples, and is the de facto standard for cancer knowledge representation and regulatory submission. 
+cancer biosamples, and is the de facto standard for cancer knowledge representation and regulatory submission.
 
-The `Mondo Disease Ontology (Mondo) <https://mondo.monarchinitiative.org/>`_ is an ontology that harmonizes disease definitions and identifiers in a systematic and computational manner across many resources, and is therefore the recommneded disease ontology for use in Phenopackets to maximize interoperability. 
+The `Mondo Disease Ontology (Mondo) <https://mondo.monarchinitiative.org/>`_ is an ontology that harmonizes disease definitions and identifiers in a systematic and computational manner across many resources, and is therefore the recommneded disease ontology for use in Phenopackets to maximize interoperability.
 
 Other terminologies and ontologies may be used in the Phenopackets Schema, such as the International Classification of Diseases (ICD) or the Systematized Nomenclature of Medicine (SNOMED-CT), or numerous ontologies from the `Open Biomedical Ontologies Library (OBO) <http://www.obofoundry.org/>`_.
 

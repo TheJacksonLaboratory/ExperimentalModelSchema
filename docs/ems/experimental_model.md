@@ -1,8 +1,5 @@
-.. _rstexperimentalmodel:
+# ExperimentalModel
 
-#################
-ExperimentalModel
-#################
 
 This element captures all the data about an individual animal model or about cohorts that
 are represented as single observations, as is the case for many of the models in MPO.

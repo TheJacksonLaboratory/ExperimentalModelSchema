@@ -1,8 +1,5 @@
-.. _rstontologyclass:
+# OntologyClass
 
-#############
-OntologyClass
-#############
 
 This element is used to represent classes (terms) from ontologies, and is used in many places throughout the
 Phenopacket standard. It is a simple, two element message that represents the identifier and the label of
@@ -14,18 +11,17 @@ label match in the original ontology. We note that occasionally, ontology mainta
 term.
 
 
-Data model
-##########
-
-.. csv-table::
-   :header: Field, Type, Multiplicity, Description
-
-    id, string, 1..1, a CURIE-style identifier e.g., MP:0013414. REQUIRED.
-    label, string, 1..1, human-readable class name e.g., decreased myeloid cell number in bone marrow. REQUIRED.
+## Data model
 
 
-Example
-#######
+| Field | Type      | Multiplicity      |  Description                                                                          |
+|:------|:----------|:------------------|:--------------------------------------------------------------------------------------|
+| id    |  string   |  1..1             |  a CURIE-style identifier e.g., MP:0013414. REQUIRED                                  |
+| label |  string   |  1..1             | human-readable class name e.g., decreased myeloid cell number in bone marrow. REQUIRED|
+
+
+## Example
+
 
 .. code-block:: yaml
 
@@ -33,17 +29,17 @@ Example
         id: "MP:0013414"
         label: "decreased myeloid cell number in bone marrow"
 
-Explanations
-############
+## Explanations
 
 
-id
-~~
+
+- id
+
 The ID of an OntologyClass element MUST take the form of a :ref:`rstcurie` format.
 In order that the class is resolvable, it MUST reference the namespace prefix of a :ref:`rstresource` named in the
 :ref:`rstmetadata`.
 
-label
-~~~~~
+- label
+
 The the human-readable label for the concept. This MUST match the ID in the ontology referenced by the namespace prefix
 in a :ref:`rstresource` named in the :ref:`rstmetadata`.

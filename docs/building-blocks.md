@@ -1,8 +1,5 @@
-.. _rstbuildingblocks:
+# EMS building blocks
 
-===================
-EMS building blocks
-===================
 
 The EMS standard consists of several protobuf messages each of which contains information about a certain topic such as phenotype,
 variant, pedigree, and so on.  One message can contain other messages, which allows a rich representation of data.  For instance, the
@@ -13,21 +10,32 @@ building blocks.
 
 
 
-.. toctree::
-   :maxdepth: 1
+- [age](ems/age.md)
+- [animal](ems/animal.md)
+- [animal_identifier](ems/animal_identifier.md)
+- [animal_origin](ems/animal_origin.md)
+- [cohort_measurement](ems/cohort_measurement.md)
+- [experimental_cohort](ems/experimental_cohort.md)
+- [experimental_measurement](experimental_measurement/age.md)
+- [metadata](ems/metadata.md)
+- [model_genotype](ems/model_genotype.md)
+- [ontologyclass](ems/ontologyclass.md)
+- [project](ems/age.project)
+- [protocol](ems/protocol.md)
+- [researcher](ems/researcher.md)
+- [strain](ems/strain.md)
+- [study](ems/study.md)
 
-   age
-   animal
-   animal_identifier
-   animal_origin
-   cohort_measurement
-   experimental_cohort
-   experimental_measurement
-   metadata
-   model_genotype
-   ontologyclass
-   project
-   protocol
-   researcher
-   strain
-   study
+
+
+
+
+
+
+
+
+
+
+
+
+
