@@ -7,7 +7,7 @@ modeling the phenotypic data of model organism experimental data. The
 EMS comprises information about the experimental conditions, genetic modifications
 of the model, phenotypic observations and measurements. The EMS is
 designed to be compatible with the
-[GA4GH Phenopacket Schema](https://phenopacket-schema.readthedocs.io/en/latest/index.html).
+[GA4GH Phenopacket Schema](https://phenopacket-schema.readthedocs.io/en/latest/index.html){target="_bank"}.
 
 A goal of the EMS is to
 represent experimental outcomes across the entirety of the

@@ -122,7 +122,7 @@ be a controlled terminology or ontology?
 
 | Field | Type | Multiplicity |  Description |
 |id | string |1..1|An arbitrary identifier for this specific measurement. REQUIRED|
-|assay | [OntologyClass](ems/ontologyclass.md) | 1..1 |The experiment performed to obtain the measurement|
+|assay | [OntologyClass](ontologyclass.md) | 1..1 |The experiment performed to obtain the measurement|
 |age |AgeElement| 0..1|The age at which the experiment was performend. RECOMMENDED|
 
 
@@ -139,5 +139,5 @@ The following example is typical but does not make use of all of the optional fi
 
 ## Explanations
 
-zodo
+todo
 

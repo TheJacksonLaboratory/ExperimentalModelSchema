@@ -25,33 +25,32 @@ one `Resource` element each for MONDO and HPO.
 ## Example
 
 
-.. code-block:: yaml
-
-  metadata:
-    created: "2019-07-21T00:25:54.662Z"
-    createdBy: "Peter R."
-    resources:
-        - id: "hp"
-        name: "human phenotype ontology"
-        url: "http://purl.obolibrary.org/obo/hp.owl"
-        version: "2018-03-08"
-        namespacePrefix: "HP"
-        iriPrefix: "hp"
-        - id: "geno"
-        name: "Genotype Ontology"
-        url: "http://purl.obolibrary.org/obo/geno.owl"
-        version: "19-03-2018"
-        namespacePrefix: "GENO"
-        iriPrefix: "geno"
-        - id: "pubmed"
-        name: "PubMed"
-        url: "https://www.ncbi.nlm.nih.gov/pubmed/"
-        namespacePrefix: "PMID"
-    phenopacketSchemaVersion: "2.0"
-    externalReferences:
-        - id: "PMID:30808312"
-        description: "Bao M, et al. COL6A1 mutation leading to Bethlem myopathy with recurrent hematuria: a case report. BMC Neurol. 2019;19(1):32."
-
+``` yaml
+metadata:
+  created: "2019-07-21T00:25:54.662Z"
+  createdBy: "Peter R."
+  resources:
+      - id: "hp"
+      name: "human phenotype ontology"
+      url: "http://purl.obolibrary.org/obo/hp.owl"
+      version: "2018-03-08"
+      namespacePrefix: "HP"
+      iriPrefix: "hp"
+      - id: "geno"
+      name: "Genotype Ontology"
+      url: "http://purl.obolibrary.org/obo/geno.owl"
+      version: "19-03-2018"
+      namespacePrefix: "GENO"
+      iriPrefix: "geno"
+      - id: "pubmed"
+      name: "PubMed"
+      url: "https://www.ncbi.nlm.nih.gov/pubmed/"
+      namespacePrefix: "PMID"
+  phenopacketSchemaVersion: "2.0"
+  externalReferences:
+      - id: "PMID:30808312"
+      description: "Bao M, et al. COL6A1 mutation leading to Bethlem myopathy with recurrent hematuria: a case report. BMC Neurol. 2019;19(1):32."
+```
 
 
 ## Explanations

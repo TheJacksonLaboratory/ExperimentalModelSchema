@@ -33,9 +33,6 @@ theme:
 
 nav:
   - Home: index.md
-  - Developers:
-    - Overview: "developers/developers.md"
-    - Documentation: "developers/documentation.md"
   - Introduction:
     - Overview: "introduction.md"
     - Ontologies: "introduction/ontologies.md"
@@ -47,7 +44,7 @@ nav:
     - Animal identifier: "ems/animal_identifier.md"
     - Animal origin: "ems/animal_origin.md"
     - Cohort measuerment: "ems/cohort_measurement.md"
-    - Experimental cohort: "ems/experimental_cohort.rst"
+    - Experimental cohort: "ems/experimental_cohort.md"
     - MetaData: "ems/metadata.md"
     - Model genotype: "ems/model_genotype.md"
     - OntologyClass: "ems/ontologyclass.md"
@@ -56,6 +53,9 @@ nav:
     - Researcher: "ems/researcher.md"
     - Strain: "ems/strain.md"
     - Study: "ems/study.md"
+  - Developers:
+    - Overview: "developers/developers.md"
+    - Documentation: "developers/documentation.md"
 
 
 

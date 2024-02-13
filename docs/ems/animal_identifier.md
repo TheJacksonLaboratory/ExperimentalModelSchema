@@ -11,7 +11,7 @@ TODO -- better introduction.
 
 
 | Field | Type | Multiplicity |  Description |
-|:------:-----------|:----------------|:------|
+|:------|:-----------|:----------------|:------|
 | id     |string | 0..1 | arbitrary identifier. OPTIONAL (or should this be required?).|
 | OntologyClass | identifier | 1..1 | ontology term that describes the type of identifier such as ear punch or tattoo. REQUIRED |
 | identifier_value | string | 1..1 |  the value of the identifier. REQUIRED |
@@ -27,17 +27,16 @@ would be useful to define a small ontology with these items, or to at least crea
 want to use strings for this (too easy to make a mistake), but an enumeration would inevitably not contain all of the
 items that we will want to have. Therefore, for the purposes of this example, we have made up ``fake`` MGI terms to denote ear punch etc.
 
-.. code-block:: console
-
-    {
-      "id": "arbitrary.id",
-      "identifier": {
-        "id": "MGI:1234567",
-        "label": "ear punch"
-      },
-      "identifierValue": "90"
-    }
-
+``` json
+{
+  "id": "arbitrary.id",
+  "identifier": {
+    "id": "MGI:1234567",
+    "label": "ear punch"
+  },
+  "identifierValue": "90"
+}
+```
 
 ## Things to discuss
 
